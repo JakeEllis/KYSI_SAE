@@ -7,12 +7,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{89C00C36-7ADE-447A-8CA7-AEF081ACB2E0}</ProjectGuid>
+    <ProjectGuid>{A8166839-7DDC-452C-9D2A-67CA7A39C52C}</ProjectGuid>
     <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>KYSI_Pledge_Points_System</RootNamespace>
-    <AssemblyName>KYSI_Pledge_Points_System</AssemblyName>
+    <RootNamespace>SAE_TEST</RootNamespace>
+    <AssemblyName>SAE_TEST</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
@@ -110,9 +110,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Start\FilterConfig.cs" />
-    <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="App_Start\WebApiConfig.cs" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -123,20 +120,10 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
+    <Folder Include="Unit Tests\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\SAE_CORE\SAE_CORE.csproj">
-      <Project>{c56eaf78-bd7f-46e3-9398-a3c7a8b916c9}</Project>
-      <Name>SAE_CORE</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SAE_DAL\SAE_DAL.csproj">
-      <Project>{ef734caa-9f30-4ce3-9d26-48b14891508f}</Project>
-      <Name>SAE_DAL</Name>
-    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -156,7 +143,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>0</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:1397/</IISUrl>
+          <IISUrl>http://localhost:1156/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
