@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8037c2f9c65d412aa32ab15cabbb615d" Name="Diagram1">
+        <EntityTypeShape EntityType="SAEDB_Model.FACT" Width="1.5" PointX="5.625" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SAEDB_Model.PLEDGE" Width="1.5" PointX="2.625" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SAEDB_Model.PLEDGE_CLASS" Width="1.5" PointX="8.75" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SAEDB_Model.POINT_VALUES" Width="1.5" PointX="1.5" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SAEDB_Model.POINT" Width="1.5" PointX="8.5" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="SAEDB_Model.sysdiagram" Width="1.5" PointX="1.125" PointY="4" IsExpanded="true" />
+        <AssociationConnector Association="SAEDB_Model.FK_FACT_PLEDGE" ManuallyRouted="false" />
+        <AssociationConnector Association="SAEDB_Model.FK_FACT_PLEDGE_CLASS" ManuallyRouted="false" />
+        <AssociationConnector Association="SAEDB_Model.FK_FACT_POINT_VALUES" ManuallyRouted="false" />
+        <AssociationConnector Association="SAEDB_Model.FK_FACT_POINTS" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

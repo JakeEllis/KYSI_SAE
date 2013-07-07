@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SAEDB_Model.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="SAEDB_ModelStoreContainer">
+    <EntitySet Name="FACT" EntityType="SAEDB_Model.Store.FACT" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PLEDGE" EntityType="SAEDB_Model.Store.PLEDGE" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PLEDGE_CLASS" EntityType="SAEDB_Model.Store.PLEDGE_CLASS" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="POINT_VALUES" EntityType="SAEDB_Model.Store.POINT_VALUES" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="POINTS" EntityType="SAEDB_Model.Store.POINTS" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="sysdiagrams" EntityType="SAEDB_Model.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_FACT_PLEDGE" Association="SAEDB_Model.Store.FK_FACT_PLEDGE">
+      <End Role="PLEDGE" EntitySet="PLEDGE" />
+      <End Role="FACT" EntitySet="FACT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FACT_PLEDGE_CLASS" Association="SAEDB_Model.Store.FK_FACT_PLEDGE_CLASS">
+      <End Role="PLEDGE_CLASS" EntitySet="PLEDGE_CLASS" />
+      <End Role="FACT" EntitySet="FACT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FACT_POINT_VALUES" Association="SAEDB_Model.Store.FK_FACT_POINT_VALUES">
+      <End Role="POINT_VALUES" EntitySet="POINT_VALUES" />
+      <End Role="FACT" EntitySet="FACT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FACT_POINTS" Association="SAEDB_Model.Store.FK_FACT_POINTS">
+      <End Role="POINTS" EntitySet="POINTS" />
+      <End Role="FACT" EntitySet="FACT" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="FACT">
+    <Key>
+      <PropertyRef Name="PLEDGE_CLASS_ID" />
+      <PropertyRef Name="PLEDGE_ID" />
+      <PropertyRef Name="POINT_VAL_ID" />
+      <PropertyRef Name="POINT_ID" />
+    </Key>
+    <Property Name="PLEDGE_CLASS_ID" Type="int" Nullable="false" />
+    <Property Name="PLEDGE_ID" Type="int" Nullable="false" />
+    <Property Name="POINT_VAL_ID" Type="int" Nullable="false" />
+    <Property Name="POINT_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PLEDGE">
+    <Key>
+      <PropertyRef Name="PLEDGE_ID" />
+    </Key>
+    <Property Name="PLEDGE_ID" Type="int" Nullable="false" />
+    <Property Name="FIRST_NAME" Type="text" />
+    <Property Name="LAST_NAME" Type="text" />
+    <Property Name="STREET_ADDR" Type="nchar" MaxLength="10" />
+    <Property Name="CITY" Type="nchar" MaxLength="10" />
+    <Property Name="ZIP" Type="nchar" MaxLength="10" />
+    <Property Name="PHONE" Type="nvarchar" MaxLength="50" />
+    <Property Name="EMAIL" Type="varchar" MaxLength="50" />
+    <Property Name="GRAD_YEAR" Type="int" />
+  </EntityType>
+  <EntityType Name="PLEDGE_CLASS">
+    <Key>
+      <PropertyRef Name="PLEDGE_CLASS_ID" />
+    </Key>
+    <Property Name="PLEDGE_CLASS_ID" Type="int" Nullable="false" />
+    <Property Name="PLEDGE_CLASS_NAME" Type="nchar" Nullable="false" MaxLength="10" />
+    <Property Name="PLEDGE_CLASS_SEM" Type="nchar" MaxLength="10" />
+    <Property Name="PLEDGE_CLASS_YEAR" Type="nchar" MaxLength="10" />
+    <Property Name="PLEDGE_ED" Type="nchar" Nullable="false" MaxLength="10" />
+    <Property Name="CO_PLEDGE_ED" Type="nchar" MaxLength="10" />
+    <Property Name="PLEDGE_COUNT" Type="nchar" Nullable="false" MaxLength="10" />
+    <Property Name="INITIATED_COUNT" Type="nchar" MaxLength="10" />
+    <Property Name="PLEDGE_DROP_COUNT" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="POINT_VALUES">
+    <Key>
+      <PropertyRef Name="POINT_VAL_ID" />
+    </Key>
+    <Property Name="POINT_VAL_ID" Type="int" Nullable="false" />
+    <Property Name="PHILANTHROPY" Type="int" />
+    <Property Name="INTRAMURALS" Type="int" />
+    <Property Name="STUDY_HOURS" Type="int" />
+    <Property Name="OLYMPICS" Type="int" />
+    <Property Name="SIGNATURES" Type="int" />
+    <Property Name="PLEDGE_BOOK" Type="int" />
+  </EntityType>
+  <EntityType Name="POINTS">
+    <Key>
+      <PropertyRef Name="POINT_ID" />
+    </Key>
+    <Property Name="POINT_ID" Type="int" Nullable="false" />
+    <Property Name="ATTENDANCE_PTS" Type="nchar" MaxLength="10" />
+    <Property Name="EXAM_1" Type="nchar" MaxLength="10" />
+    <Property Name="EXAM_2" Type="nchar" MaxLength="10" />
+    <Property Name="EXAM_3" Type="nchar" MaxLength="10" />
+    <Property Name="EXAM_4" Type="nchar" MaxLength="10" />
+    <Property Name="EXAM_5" Type="nchar" MaxLength="10" />
+    <Property Name="EXAM_6" Type="nchar" MaxLength="10" />
+    <Property Name="EXAM_7" Type="nchar" MaxLength="10" />
+    <Property Name="EXAM_8" Type="nchar" MaxLength="10" />
+    <Property Name="PHIL_HOURS" Type="nchar" MaxLength="10" />
+    <Property Name="INTRAMURALS" Type="nchar" MaxLength="10" />
+    <Property Name="OLYMPICS" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <Association Name="FK_FACT_PLEDGE">
+    <End Role="PLEDGE" Type="SAEDB_Model.Store.PLEDGE" Multiplicity="1" />
+    <End Role="FACT" Type="SAEDB_Model.Store.FACT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PLEDGE">
+        <PropertyRef Name="PLEDGE_ID" />
+      </Principal>
+      <Dependent Role="FACT">
+        <PropertyRef Name="PLEDGE_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FACT_PLEDGE_CLASS">
+    <End Role="PLEDGE_CLASS" Type="SAEDB_Model.Store.PLEDGE_CLASS" Multiplicity="1" />
+    <End Role="FACT" Type="SAEDB_Model.Store.FACT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PLEDGE_CLASS">
+        <PropertyRef Name="PLEDGE_CLASS_ID" />
+      </Principal>
+      <Dependent Role="FACT">
+        <PropertyRef Name="PLEDGE_CLASS_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FACT_POINT_VALUES">
+    <End Role="POINT_VALUES" Type="SAEDB_Model.Store.POINT_VALUES" Multiplicity="1" />
+    <End Role="FACT" Type="SAEDB_Model.Store.FACT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="POINT_VALUES">
+        <PropertyRef Name="POINT_VAL_ID" />
+      </Principal>
+      <Dependent Role="FACT">
+        <PropertyRef Name="POINT_VAL_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FACT_POINTS">
+    <End Role="POINTS" Type="SAEDB_Model.Store.POINTS" Multiplicity="1" />
+    <End Role="FACT" Type="SAEDB_Model.Store.FACT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="POINTS">
+        <PropertyRef Name="POINT_ID" />
+      </Principal>
+      <Dependent Role="FACT">
+        <PropertyRef Name="POINT_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="fn_diagramobjects" ReturnType="int" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+</Schema>

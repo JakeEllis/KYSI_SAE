@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SAEDB_ModelStoreContainer" CdmEntityContainer="SAEDB">
+    <EntitySetMapping Name="FACTs">
+      <EntityTypeMapping TypeName="SAEDB_Model.FACT">
+        <MappingFragment StoreEntitySet="FACT">
+          <ScalarProperty Name="PLEDGE_CLASS_ID" ColumnName="PLEDGE_CLASS_ID" />
+          <ScalarProperty Name="PLEDGE_ID" ColumnName="PLEDGE_ID" />
+          <ScalarProperty Name="POINT_VAL_ID" ColumnName="POINT_VAL_ID" />
+          <ScalarProperty Name="POINT_ID" ColumnName="POINT_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PLEDGEs">
+      <EntityTypeMapping TypeName="SAEDB_Model.PLEDGE">
+        <MappingFragment StoreEntitySet="PLEDGE">
+          <ScalarProperty Name="PLEDGE_ID" ColumnName="PLEDGE_ID" />
+          <ScalarProperty Name="FIRST_NAME" ColumnName="FIRST_NAME" />
+          <ScalarProperty Name="LAST_NAME" ColumnName="LAST_NAME" />
+          <ScalarProperty Name="STREET_ADDR" ColumnName="STREET_ADDR" />
+          <ScalarProperty Name="CITY" ColumnName="CITY" />
+          <ScalarProperty Name="ZIP" ColumnName="ZIP" />
+          <ScalarProperty Name="PHONE" ColumnName="PHONE" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="GRAD_YEAR" ColumnName="GRAD_YEAR" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PLEDGE_CLASS">
+      <EntityTypeMapping TypeName="SAEDB_Model.PLEDGE_CLASS">
+        <MappingFragment StoreEntitySet="PLEDGE_CLASS">
+          <ScalarProperty Name="PLEDGE_CLASS_ID" ColumnName="PLEDGE_CLASS_ID" />
+          <ScalarProperty Name="PLEDGE_CLASS_NAME" ColumnName="PLEDGE_CLASS_NAME" />
+          <ScalarProperty Name="PLEDGE_CLASS_SEM" ColumnName="PLEDGE_CLASS_SEM" />
+          <ScalarProperty Name="PLEDGE_CLASS_YEAR" ColumnName="PLEDGE_CLASS_YEAR" />
+          <ScalarProperty Name="PLEDGE_ED" ColumnName="PLEDGE_ED" />
+          <ScalarProperty Name="CO_PLEDGE_ED" ColumnName="CO_PLEDGE_ED" />
+          <ScalarProperty Name="PLEDGE_COUNT" ColumnName="PLEDGE_COUNT" />
+          <ScalarProperty Name="INITIATED_COUNT" ColumnName="INITIATED_COUNT" />
+          <ScalarProperty Name="PLEDGE_DROP_COUNT" ColumnName="PLEDGE_DROP_COUNT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="POINT_VALUES">
+      <EntityTypeMapping TypeName="SAEDB_Model.POINT_VALUES">
+        <MappingFragment StoreEntitySet="POINT_VALUES">
+          <ScalarProperty Name="POINT_VAL_ID" ColumnName="POINT_VAL_ID" />
+          <ScalarProperty Name="PHILANTHROPY" ColumnName="PHILANTHROPY" />
+          <ScalarProperty Name="INTRAMURALS" ColumnName="INTRAMURALS" />
+          <ScalarProperty Name="STUDY_HOURS" ColumnName="STUDY_HOURS" />
+          <ScalarProperty Name="OLYMPICS" ColumnName="OLYMPICS" />
+          <ScalarProperty Name="SIGNATURES" ColumnName="SIGNATURES" />
+          <ScalarProperty Name="PLEDGE_BOOK" ColumnName="PLEDGE_BOOK" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="POINTS">
+      <EntityTypeMapping TypeName="SAEDB_Model.POINT">
+        <MappingFragment StoreEntitySet="POINTS">
+          <ScalarProperty Name="POINT_ID" ColumnName="POINT_ID" />
+          <ScalarProperty Name="ATTENDANCE_PTS" ColumnName="ATTENDANCE_PTS" />
+          <ScalarProperty Name="EXAM_1" ColumnName="EXAM_1" />
+          <ScalarProperty Name="EXAM_2" ColumnName="EXAM_2" />
+          <ScalarProperty Name="EXAM_3" ColumnName="EXAM_3" />
+          <ScalarProperty Name="EXAM_4" ColumnName="EXAM_4" />
+          <ScalarProperty Name="EXAM_5" ColumnName="EXAM_5" />
+          <ScalarProperty Name="EXAM_6" ColumnName="EXAM_6" />
+          <ScalarProperty Name="EXAM_7" ColumnName="EXAM_7" />
+          <ScalarProperty Name="EXAM_8" ColumnName="EXAM_8" />
+          <ScalarProperty Name="PHIL_HOURS" ColumnName="PHIL_HOURS" />
+          <ScalarProperty Name="INTRAMURALS" ColumnName="INTRAMURALS" />
+          <ScalarProperty Name="OLYMPICS" ColumnName="OLYMPICS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="SAEDB_Model.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="SAEDB_Model.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="SAEDB_Model.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="SAEDB_Model.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="SAEDB_Model.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SAEDB_Model.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="SAEDB_Model.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SAEDB_Model.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="SAEDB_Model.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="SAEDB_Model.Store.sp_upgraddiagrams" />
+  </EntityContainerMapping>
+</Mapping>
