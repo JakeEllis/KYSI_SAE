@@ -15,7 +15,7 @@ body {
 }
 
 a {
-    color: #fff;
+    color: #FFF;
     outline: none;
     padding-left: 3px;
     padding-right: 3px;
@@ -24,11 +24,11 @@ a {
 
     a:link, a:visited,
     a:active, a:hover {
-        color: #333;
+        color: #FFFF04;
     }
 
     a:hover {
-        background-color: #c7d1d6;
+        color: #FFF;
     }
 
 header, footer, hgroup,
@@ -193,14 +193,15 @@ ul#menu {
         padding-left: 15px;
     }
 
+/*This is where the Login, About, Contact Links color is set*/
         ul#menu li a {
             background: none;
-            color: #999;
+            color: #333;
             text-decoration: none;
         }
 
         ul#menu li a:hover {
-            color: #333;
+            color: #FFF;
             text-decoration: none;
         }
 
@@ -212,8 +213,9 @@ ul#menu {
     background-color: #fff;
 }
 
+/*This is where the purple color is set*/
     .featured .content-wrapper {
-        background-color: #f106f3;
+        background-color: #660066;
         background-image: -ms-linear-gradient(left, #7ac0da 0%, #a4d4e6 100%);
         background-image: -o-linear-gradient(left, #7ac0da 0%, #a4d4e6 100%);
         background-image: -webkit-gradient(linear, left top, right top, color-stop(0, #7ac0da), color-stop(1, #a4d4e6));
@@ -222,9 +224,9 @@ ul#menu {
         color: #3e5667;
         padding: 20px 40px 30px 40px;
     }
-
+    /*This is where the gold header color is set*/
         .featured hgroup.title h1, .featured hgroup.title h2 {
-            color: #fff;
+            color: #FFFF04;
         }
 
         .featured p {
@@ -256,11 +258,13 @@ section.feature {
 ol.round {
     list-style-type: none;
     padding-left: 0;
+    
 }
 
     ol.round li {
         margin: 25px 0;
         padding-left: 45px;
+        
     }
 
         ol.round li.zero {

@@ -1,6 +1,9 @@
 ﻿@{
     ViewBag.Title = "KYSI Pledge System";
 }
+
+@using SAE_KYSI_PLEDGE.Controllers;
+
 @section featured {
     <section class="featured">
         <div class="content-wrapper">
@@ -12,14 +15,18 @@
                 
                
             </p>
-            <ol class="round">
-                <li class="one"> <a href="~/Views/SAE/CreateClass">Add a Pledge Class </a></li>
+            <ol class="round" id="menu">
+                @*<li class="one"> <a href="../Views/SAE/CreateClass">Add a Pledge Class </a></li>*@
+                <li class="one">@Html.ActionLink("Add a Pledge Class","CreateClass", "Create" )</li>
 
-                <li class="two"> <a href="~/Views/SAE/EditClass">Edit a Pledge Class</a></li>
+                <li class="two"> <a href="https://www.google.com/">Edit a Pledge Class</a></li>
+               @* <li class="one">@Html.ActionLink("Add a Pledge Class","EditClass", "Edit" )</li>*@
 
-                <li class="three"> <a href="~/Views/SAE/EditPledge">Edit a Pledge Information</a></li>
+                <li class="three"> <a href="https://www.google.com/">Edit a Pledge Information</a></li>
+                @*<li class="one">@Html.ActionLink("Add a Pledge Class","EditPledge", "Edit" )</li>*@
 
-                <li class="four"> <a href="~/Views/SAE/ManagePoints">Manage Pledge Points</a></li>
+                <li class="four"> <a href="https://www.google.com/">Manage Pledge Points</a></li>
+                @*<li class="one">@Html.ActionLink("Add a Pledge Class","ManagePoints", "Manage" )</li>*@
 
             </ol>
         </div>
