@@ -55,3 +55,4 @@ C:\Users\Jake Ellis\Desktop\SAE\SAE_KYSI_PLEDGE\SAE_DAL\bin\System.Web.WebPages.
 C:\Users\Jake Ellis\Desktop\SAE\SAE_KYSI_PLEDGE\SAE_DAL\bin\System.Web.WebPages.Razor.xml
 C:\Users\Jake Ellis\Desktop\SAE\SAE_KYSI_PLEDGE\SAE_DAL\obj\Debug\SAE_DAL.dll
 C:\Users\Jake Ellis\Desktop\SAE\SAE_KYSI_PLEDGE\SAE_DAL\obj\Debug\SAE_DAL.pdb
+C:\Users\Jake Ellis\Desktop\SAE\SAE_KYSI_PLEDGE\SAE_DAL\obj\Debug\SAE_DAL.csprojResolveAssemblyReference.cache
