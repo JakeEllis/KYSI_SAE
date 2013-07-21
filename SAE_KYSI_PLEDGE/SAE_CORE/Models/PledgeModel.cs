@@ -17,5 +17,7 @@ namespace SAE_CORE
         public string Email { get; set; }
         public int GradYear { get; set; }
         public int PledgeID { get; set; }
+        public string BigBro_First { get; set; }
+        public string BigBro_Last { get; set; }
     }
 }

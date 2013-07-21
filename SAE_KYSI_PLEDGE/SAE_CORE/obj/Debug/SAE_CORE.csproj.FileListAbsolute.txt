@@ -44,7 +44,6 @@ C:\Users\Jake Ellis\Desktop\SAE\SAE_KYSI_PLEDGE\SAE_CORE\bin\System.Web.Razor.dl
 C:\Users\Jake Ellis\Desktop\SAE\SAE_KYSI_PLEDGE\SAE_CORE\bin\System.Web.WebPages.Deployment.dll
 C:\Users\Jake Ellis\Desktop\SAE\SAE_KYSI_PLEDGE\SAE_CORE\bin\System.Web.WebPages.dll
 C:\Users\Jake Ellis\Desktop\SAE\SAE_KYSI_PLEDGE\SAE_CORE\bin\System.Web.WebPages.Razor.dll
-C:\Users\Jake Ellis\Desktop\SAE\SAE_KYSI_PLEDGE\SAE_CORE\bin\EntityFramework.dll
 C:\Users\Jake Ellis\Desktop\SAE\SAE_KYSI_PLEDGE\SAE_CORE\bin\SAE_DAL.pdb
 C:\Users\Jake Ellis\Desktop\SAE\SAE_KYSI_PLEDGE\SAE_CORE\bin\Newtonsoft.Json.xml
 C:\Users\Jake Ellis\Desktop\SAE\SAE_KYSI_PLEDGE\SAE_CORE\bin\System.Net.Http.Formatting.xml
@@ -56,7 +55,8 @@ C:\Users\Jake Ellis\Desktop\SAE\SAE_KYSI_PLEDGE\SAE_CORE\bin\System.Web.Razor.xm
 C:\Users\Jake Ellis\Desktop\SAE\SAE_KYSI_PLEDGE\SAE_CORE\bin\System.Web.WebPages.xml
 C:\Users\Jake Ellis\Desktop\SAE\SAE_KYSI_PLEDGE\SAE_CORE\bin\System.Web.WebPages.Deployment.xml
 C:\Users\Jake Ellis\Desktop\SAE\SAE_KYSI_PLEDGE\SAE_CORE\bin\System.Web.WebPages.Razor.xml
-C:\Users\Jake Ellis\Desktop\SAE\SAE_KYSI_PLEDGE\SAE_CORE\bin\EntityFramework.xml
 C:\Users\Jake Ellis\Desktop\SAE\SAE_KYSI_PLEDGE\SAE_CORE\obj\Debug\SAE_CORE.csprojResolveAssemblyReference.cache
 C:\Users\Jake Ellis\Desktop\SAE\SAE_KYSI_PLEDGE\SAE_CORE\obj\Debug\SAE_CORE.dll
 C:\Users\Jake Ellis\Desktop\SAE\SAE_KYSI_PLEDGE\SAE_CORE\obj\Debug\SAE_CORE.pdb
+C:\Users\Jake Ellis\Desktop\SAE\SAE_KYSI_PLEDGE\SAE_CORE\bin\EntityFramework.dll
+C:\Users\Jake Ellis\Desktop\SAE\SAE_KYSI_PLEDGE\SAE_CORE\bin\EntityFramework.xml

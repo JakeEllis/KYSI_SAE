@@ -28,6 +28,8 @@ namespace SAE_DAL
         public string PHONE { get; set; }
         public string EMAIL { get; set; }
         public Nullable<int> GRAD_YEAR { get; set; }
+        public string BIG_BROTHER_FIRST { get; set; }
+        public string BIG_BROTHER_LAST { get; set; }
     
         public virtual ICollection<FACT> FACTs { get; set; }
     }

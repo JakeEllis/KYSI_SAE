@@ -133,6 +133,11 @@
       <DependentUpon>SAEDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\FactRepo.cs" />
+    <Compile Include="Repositories\PledgeClassRepo.cs" />
+    <Compile Include="Repositories\PledgeRepo.cs" />
+    <Compile Include="Repositories\PointsRepo.cs" />
+    <Compile Include="Repositories\PointsValueRepo.cs" />
     <Compile Include="SAEDB.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -173,10 +178,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Repositories\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
     <EntityDeploy Include="SAEDB.edmx">
@@ -198,9 +205,6 @@
       <DependentUpon>SAEDB.edmx</DependentUpon>
       <LastGenOutput>SAEDB.cs</LastGenOutput>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

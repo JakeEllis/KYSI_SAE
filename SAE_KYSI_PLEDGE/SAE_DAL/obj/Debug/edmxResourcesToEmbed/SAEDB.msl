@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="SAEDB_ModelStoreContainer" CdmEntityContainer="SAEDB">
+  <EntityContainerMapping StorageEntityContainer="SAEDBStoreContainer" CdmEntityContainer="SAE_DB">
     <EntitySetMapping Name="FACTs">
-      <EntityTypeMapping TypeName="SAEDB_Model.FACT">
+      <EntityTypeMapping TypeName="SAEDB.FACT">
         <MappingFragment StoreEntitySet="FACT">
           <ScalarProperty Name="PLEDGE_CLASS_ID" ColumnName="PLEDGE_CLASS_ID" />
           <ScalarProperty Name="PLEDGE_ID" ColumnName="PLEDGE_ID" />
@@ -12,7 +12,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="PLEDGEs">
-      <EntityTypeMapping TypeName="SAEDB_Model.PLEDGE">
+      <EntityTypeMapping TypeName="SAEDB.PLEDGE">
         <MappingFragment StoreEntitySet="PLEDGE">
           <ScalarProperty Name="PLEDGE_ID" ColumnName="PLEDGE_ID" />
           <ScalarProperty Name="FIRST_NAME" ColumnName="FIRST_NAME" />
@@ -23,11 +23,13 @@
           <ScalarProperty Name="PHONE" ColumnName="PHONE" />
           <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
           <ScalarProperty Name="GRAD_YEAR" ColumnName="GRAD_YEAR" />
+          <ScalarProperty Name="BIG_BROTHER_FIRST" ColumnName="BIG_BROTHER_FIRST" />
+          <ScalarProperty Name="BIG_BROTHER_LAST" ColumnName="BIG_BROTHER_LAST" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="PLEDGE_CLASS">
-      <EntityTypeMapping TypeName="SAEDB_Model.PLEDGE_CLASS">
+      <EntityTypeMapping TypeName="SAEDB.PLEDGE_CLASS">
         <MappingFragment StoreEntitySet="PLEDGE_CLASS">
           <ScalarProperty Name="PLEDGE_CLASS_ID" ColumnName="PLEDGE_CLASS_ID" />
           <ScalarProperty Name="PLEDGE_CLASS_NAME" ColumnName="PLEDGE_CLASS_NAME" />
@@ -42,7 +44,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="POINT_VALUES">
-      <EntityTypeMapping TypeName="SAEDB_Model.POINT_VALUES">
+      <EntityTypeMapping TypeName="SAEDB.POINT_VALUES">
         <MappingFragment StoreEntitySet="POINT_VALUES">
           <ScalarProperty Name="POINT_VAL_ID" ColumnName="POINT_VAL_ID" />
           <ScalarProperty Name="PHILANTHROPY" ColumnName="PHILANTHROPY" />
@@ -55,7 +57,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="POINTS">
-      <EntityTypeMapping TypeName="SAEDB_Model.POINT">
+      <EntityTypeMapping TypeName="SAEDB.POINT">
         <MappingFragment StoreEntitySet="POINTS">
           <ScalarProperty Name="POINT_ID" ColumnName="POINT_ID" />
           <ScalarProperty Name="ATTENDANCE_PTS" ColumnName="ATTENDANCE_PTS" />
@@ -74,7 +76,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="sysdiagrams">
-      <EntityTypeMapping TypeName="SAEDB_Model.sysdiagram">
+      <EntityTypeMapping TypeName="SAEDB.sysdiagram">
         <MappingFragment StoreEntitySet="sysdiagrams">
           <ScalarProperty Name="name" ColumnName="name" />
           <ScalarProperty Name="principal_id" ColumnName="principal_id" />
@@ -84,20 +86,20 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="SAEDB_Model.Store.sp_alterdiagram" />
-    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="SAEDB_Model.Store.sp_creatediagram" />
-    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="SAEDB_Model.Store.sp_dropdiagram" />
-    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="SAEDB_Model.Store.sp_helpdiagramdefinition">
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="SAEDB.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="SAEDB.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="SAEDB.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="SAEDB.Store.sp_helpdiagramdefinition">
       <ResultMapping>
-        <ComplexTypeMapping TypeName="SAEDB_Model.sp_helpdiagramdefinition_Result">
+        <ComplexTypeMapping TypeName="SAEDB.sp_helpdiagramdefinition_Result">
           <ScalarProperty Name="version" ColumnName="version" />
           <ScalarProperty Name="definition" ColumnName="definition" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="SAEDB_Model.Store.sp_helpdiagrams">
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="SAEDB.Store.sp_helpdiagrams">
       <ResultMapping>
-        <ComplexTypeMapping TypeName="SAEDB_Model.sp_helpdiagrams_Result">
+        <ComplexTypeMapping TypeName="SAEDB.sp_helpdiagrams_Result">
           <ScalarProperty Name="Database" ColumnName="Database" />
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="ID" ColumnName="ID" />
@@ -106,7 +108,7 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="SAEDB_Model.Store.sp_renamediagram" />
-    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="SAEDB_Model.Store.sp_upgraddiagrams" />
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="SAEDB.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="SAEDB.Store.sp_upgraddiagrams" />
   </EntityContainerMapping>
 </Mapping>
