@@ -1,25 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="SAEDB_Model.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-  <EntityContainer Name="SAEDB_ModelStoreContainer">
-    <EntitySet Name="FACT" EntityType="SAEDB_Model.Store.FACT" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="PLEDGE" EntityType="SAEDB_Model.Store.PLEDGE" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="PLEDGE_CLASS" EntityType="SAEDB_Model.Store.PLEDGE_CLASS" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="POINT_VALUES" EntityType="SAEDB_Model.Store.POINT_VALUES" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="POINTS" EntityType="SAEDB_Model.Store.POINTS" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="sysdiagrams" EntityType="SAEDB_Model.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
-    <AssociationSet Name="FK_FACT_PLEDGE" Association="SAEDB_Model.Store.FK_FACT_PLEDGE">
+<Schema Namespace="SAEDB.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="SAEDBStoreContainer">
+    <EntitySet Name="FACT" EntityType="SAEDB.Store.FACT" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PLEDGE" EntityType="SAEDB.Store.PLEDGE" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PLEDGE_CLASS" EntityType="SAEDB.Store.PLEDGE_CLASS" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="POINT_VALUES" EntityType="SAEDB.Store.POINT_VALUES" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="POINTS" EntityType="SAEDB.Store.POINTS" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="sysdiagrams" EntityType="SAEDB.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_FACT_PLEDGE" Association="SAEDB.Store.FK_FACT_PLEDGE">
       <End Role="PLEDGE" EntitySet="PLEDGE" />
       <End Role="FACT" EntitySet="FACT" />
     </AssociationSet>
-    <AssociationSet Name="FK_FACT_PLEDGE_CLASS" Association="SAEDB_Model.Store.FK_FACT_PLEDGE_CLASS">
+    <AssociationSet Name="FK_FACT_PLEDGE_CLASS" Association="SAEDB.Store.FK_FACT_PLEDGE_CLASS">
       <End Role="PLEDGE_CLASS" EntitySet="PLEDGE_CLASS" />
       <End Role="FACT" EntitySet="FACT" />
     </AssociationSet>
-    <AssociationSet Name="FK_FACT_POINT_VALUES" Association="SAEDB_Model.Store.FK_FACT_POINT_VALUES">
+    <AssociationSet Name="FK_FACT_POINT_VALUES" Association="SAEDB.Store.FK_FACT_POINT_VALUES">
       <End Role="POINT_VALUES" EntitySet="POINT_VALUES" />
       <End Role="FACT" EntitySet="FACT" />
     </AssociationSet>
-    <AssociationSet Name="FK_FACT_POINTS" Association="SAEDB_Model.Store.FK_FACT_POINTS">
+    <AssociationSet Name="FK_FACT_POINTS" Association="SAEDB.Store.FK_FACT_POINTS">
       <End Role="POINTS" EntitySet="POINTS" />
       <End Role="FACT" EntitySet="FACT" />
     </AssociationSet>
@@ -49,6 +49,8 @@
     <Property Name="PHONE" Type="nvarchar" MaxLength="50" />
     <Property Name="EMAIL" Type="varchar" MaxLength="50" />
     <Property Name="GRAD_YEAR" Type="int" />
+    <Property Name="BIG_BROTHER_FIRST" Type="nchar" MaxLength="25" />
+    <Property Name="BIG_BROTHER_LAST" Type="nchar" MaxLength="25" />
   </EntityType>
   <EntityType Name="PLEDGE_CLASS">
     <Key>
@@ -105,8 +107,8 @@
     <Property Name="definition" Type="varbinary(max)" />
   </EntityType>
   <Association Name="FK_FACT_PLEDGE">
-    <End Role="PLEDGE" Type="SAEDB_Model.Store.PLEDGE" Multiplicity="1" />
-    <End Role="FACT" Type="SAEDB_Model.Store.FACT" Multiplicity="*" />
+    <End Role="PLEDGE" Type="SAEDB.Store.PLEDGE" Multiplicity="1" />
+    <End Role="FACT" Type="SAEDB.Store.FACT" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="PLEDGE">
         <PropertyRef Name="PLEDGE_ID" />
@@ -117,8 +119,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_FACT_PLEDGE_CLASS">
-    <End Role="PLEDGE_CLASS" Type="SAEDB_Model.Store.PLEDGE_CLASS" Multiplicity="1" />
-    <End Role="FACT" Type="SAEDB_Model.Store.FACT" Multiplicity="*" />
+    <End Role="PLEDGE_CLASS" Type="SAEDB.Store.PLEDGE_CLASS" Multiplicity="1" />
+    <End Role="FACT" Type="SAEDB.Store.FACT" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="PLEDGE_CLASS">
         <PropertyRef Name="PLEDGE_CLASS_ID" />
@@ -129,8 +131,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_FACT_POINT_VALUES">
-    <End Role="POINT_VALUES" Type="SAEDB_Model.Store.POINT_VALUES" Multiplicity="1" />
-    <End Role="FACT" Type="SAEDB_Model.Store.FACT" Multiplicity="*" />
+    <End Role="POINT_VALUES" Type="SAEDB.Store.POINT_VALUES" Multiplicity="1" />
+    <End Role="FACT" Type="SAEDB.Store.FACT" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="POINT_VALUES">
         <PropertyRef Name="POINT_VAL_ID" />
@@ -141,8 +143,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_FACT_POINTS">
-    <End Role="POINTS" Type="SAEDB_Model.Store.POINTS" Multiplicity="1" />
-    <End Role="FACT" Type="SAEDB_Model.Store.FACT" Multiplicity="*" />
+    <End Role="POINTS" Type="SAEDB.Store.POINTS" Multiplicity="1" />
+    <End Role="FACT" Type="SAEDB.Store.FACT" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="POINTS">
         <PropertyRef Name="POINT_ID" />

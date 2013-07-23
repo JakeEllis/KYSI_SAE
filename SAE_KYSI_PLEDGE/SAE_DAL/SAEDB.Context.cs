@@ -16,10 +16,10 @@ namespace SAE_DAL
     using System.Data.Objects.DataClasses;
     using System.Linq;
     
-    public partial class SAEDB : DbContext
+    public partial class SAE_DB : DbContext
     {
-        public SAEDB()
-            : base("name=SAEDB")
+        public SAE_DB()
+            : base("name=SAE_DB")
         {
         }
     

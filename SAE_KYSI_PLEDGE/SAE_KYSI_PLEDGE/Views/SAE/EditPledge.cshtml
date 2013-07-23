@@ -1,5 +1,26 @@
 ﻿@{
     ViewBag.Title = "EditPledge";
+    @model SAE_CORE.PledgeModel
 }
 
 <h2>EditPledge</h2>
+
+@section featured
+{
+
+@Html.LabelFor(m => m.LastName, Model.FirstName, "Select Pledge")
+@*@Html.DropDownListFor(m => m.LastName, Model.FirstName) I think I need to create a view model for the list of
+ strings to choose from*@
+
+    
+@* Here is where we would add the javascript to pull of the pledge class information as is then go to the next 
+page/partial view to allow the user to edit the pledge class information*@
+
+@* @Html.Partial("")*@
+
+
+<input type="submit" title="Submit" value="Submit"/>
+<input type="button" title="Cancel" value ="Cancel"/>
+
+
+}

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
+
 namespace SAE_KYSI_PLEDGE.Controllers
 {
     public class HomeController : Controller
@@ -28,5 +29,6 @@ namespace SAE_KYSI_PLEDGE.Controllers
 
             return View();
         }
+
     }
 }

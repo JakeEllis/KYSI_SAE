@@ -1,11 +1,44 @@
 ﻿@{
     ViewBag.Title = "CreatePledge";
+    @model SAE_CORE.PledgeModel 
 }
 
 @section featured {
     
     <h2>CreatePledge</h2>
 
+@Html.LabelFor(m => m.FirstName, "First Name")
+@Html.TextBoxFor(m => m.FirstName)
+
+@Html.LabelFor(m => m.LastName, "Last Name")
+@Html.TextBoxFor(m => m.LastName)
+
+@Html.LabelFor(m => m.PhoneNumber, "Phone Number")
+@Html.TextBoxFor(m => m.PhoneNumber)
+
+@Html.LabelFor(m => m.Street_Address, "Street Address")
+@Html.TextBoxFor(m => m.Street_Address)
+
+@Html.LabelFor(m => m.City, "City")
+@Html.TextBoxFor(m => m.City)
+
+@Html.LabelFor(m => m.ZipCode, "Zip Code")
+@Html.TextBoxFor(m => m.ZipCode)
+
+@Html.LabelFor(m => m.Email, "Email")
+@Html.TextBoxFor(m => m.Email)
+
+@Html.LabelFor(m => m.GradYear, "Expected Grad Year")
+@Html.TextBoxFor(m => m.GradYear)
+
+    @Html.LabelFor(m => m.BigBro_First, "Big Brother First Name")
+@Html.TextBoxFor(m=> m.BigBro_First)
+
+    @Html.LabelFor(m => m.BigBro_Last, "Big Brother Last Name")
+@Html.TextBoxFor(m=> m.BigBro_Last)
+
+    <input type="submit" title="Submit" value="Submit"/>
+    <input type="button" title="Cancel" value ="Cancel"/>
     
  }
 

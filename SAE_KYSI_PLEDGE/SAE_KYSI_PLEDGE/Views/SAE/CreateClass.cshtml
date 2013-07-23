@@ -1,13 +1,29 @@
 ﻿@{
-    ViewBag.Title = "Create Class";
-    using SAE_KYSI_PLEDGE.Controllers;
+    ViewBag.Title = "Create Pledge Class";
+ 
+    @model SAE_CORE.Models.PledgeClassModel
+    
 }
 
 @section featured {
     
+    <h2>Add Pledge Class</h2>
     
-    
-    <h2>CreateClass</h2>
+    @Html.LabelFor(m => m.Pledge_Class_Name, "Class Name")
+    @Html.TextBoxFor(m => m.Pledge_Class_Name)
+
+    @Html.LabelFor(m => m.Pledge_Educator, "Pledge Educator First and Last Name")
+    @Html.TextBoxFor(m => m.Pledge_Educator, "PledgeEDName")
+
+    @Html.LabelFor(m => m.Co_Pledge_Educator, "Co-Pledge Educator First and Last Name")
+    @Html.TextBoxFor(m => m.Co_Pledge_Educator, "CoPledgeName")
+
+    @Html.LabelFor(m => m.Pledge_Count, "Number Of Pledges that signed bids")
+    @Html.TextBoxFor(m => m.Pledge_Count, "PledgeCount")
+
+    <input type="submit" title="Submit" value="Submit"/>
+    <input  type="button" title="Cancel" value ="Cancel" onclick="~/Views/Home/Index"/>
+
     
     }
 
