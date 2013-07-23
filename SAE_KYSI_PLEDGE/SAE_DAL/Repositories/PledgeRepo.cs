@@ -6,15 +6,43 @@ using System.Web.Mvc;
 
 namespace SAE_DAL.Repositories
 {
-    public class PledgeRepo : Controller
+    public class PledgeRepo : IRepository<PLEDGE>
     {
-        //
-        // GET: /PledgeRepo/
+        private SAE_DB _content = null;
 
-        public ActionResult Index()
+        public PledgeRepo()
         {
-            return View();
+            _content = new SAE_DB();
         }
 
+        public PLEDGE getById(PLEDGE PledgeObject)
+        {
+            throw new NotImplementedException();
+        }
+
+        public PLEDGE[] getAll()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void add(PLEDGE pledgeObject)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void update(PLEDGE pledgeObject)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void remove(PLEDGE pledgeObject)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IQueryable<PLEDGE> query(System.Linq.Expressions.Expression<Func<PLEDGE, bool>> filter)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -306,11 +306,12 @@
     <Content Include="Views\SAE\CreatePledge.cshtml" />
     <Content Include="Views\SAE\EditPledge.cshtml" />
     <Content Include="Views\SAE\ManagePoints.cshtml" />
+    <Content Include="ViewModels\EditPledgeViewModel.cshtml" />
+    <Content Include="ViewModels\EditClassViewModel.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Filters\" />
-    <Folder Include="ViewModels\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
