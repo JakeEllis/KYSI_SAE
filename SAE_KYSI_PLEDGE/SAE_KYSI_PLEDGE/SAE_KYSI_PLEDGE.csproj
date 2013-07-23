@@ -186,6 +186,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\EditClassViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
@@ -307,7 +308,6 @@
     <Content Include="Views\SAE\EditPledge.cshtml" />
     <Content Include="Views\SAE\ManagePoints.cshtml" />
     <Content Include="ViewModels\EditPledgeViewModel.cshtml" />
-    <Content Include="ViewModels\EditClassViewModel.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
