@@ -112,10 +112,6 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Unit Tests\PledgeClassTest.cs" />
-    <Compile Include="Unit Tests\PledgePointsTest.cs" />
-    <Compile Include="Unit Tests\PledgePointValueTest.cs" />
-    <Compile Include="Unit Tests\PledgeTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\FilterConfig.cs" />

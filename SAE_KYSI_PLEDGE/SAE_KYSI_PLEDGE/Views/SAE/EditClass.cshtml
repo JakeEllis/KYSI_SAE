@@ -3,9 +3,12 @@
     @model SAE_CORE.Models.PledgeClassModel
 }
 
-<h2>EditClass</h2>
+
 
 @section featured {  
+    <h1>EditClass</h1>
+
+    <br />
     
     @Html.LabelFor(m => m.Pledge_Class_Name, "Select Pledge Class")
 @*@Html.DropDownListFor(m => m.Pledge_Class_Name,) I think I need to create a view model for the list of strings to choose from*@
@@ -16,8 +19,25 @@ page/partial view to allow the user to edit the pledge class information*@
 
    @* @Html.Partial("")*@
 
-    <input type="submit" title="Select" value="Select Class"/>
-    <input type="button" title="Cancel" value ="Cancel"/>
+    <input type="submit" title="Select" value="Select Class" onclick="showDiv()"/>
+    <input type="button" title="Cancel" value ="Cancel" onclick ="location.href= '@Url.Action("Index", "Home")'"/>
+    
+    
+    <div id="displayinfo"  style="display:none;" class="answer_list" ><br /><br />
+        RUSH SAE (TEST MESSAGE)
+        <br />
+        <br />
+        <img src ="/images/SAE.jpg" width="400" height="400" />
+    </div>
+    
+    
+    
+     <script>
+         function showDiv() {
+             document.getElementById('displayinfo').style.display = "block";
+         }
+    </script>
+
 
     @* Once the user selects the pledge class and we display the class information we should have a link to
      edit a pledge in the pledge class.They would select the pledge name in a drop down and press a "Select" button *@

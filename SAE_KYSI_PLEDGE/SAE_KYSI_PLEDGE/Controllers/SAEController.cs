@@ -20,6 +20,7 @@ namespace SAE_KYSI_PLEDGE.Controllers
             ViewBag.Message = "Create Pledge Class";
 
             return View();
+ 
         }
 
         public ActionResult CreatePledge()
@@ -41,6 +42,7 @@ namespace SAE_KYSI_PLEDGE.Controllers
             ViewBag.Message = "Create Pledge";
 
             return View();
+
         }
 
         public ActionResult ManagePoints()
