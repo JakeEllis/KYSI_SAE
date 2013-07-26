@@ -8,7 +8,7 @@
 @section featured
 {
 
-@Html.LabelFor(m => m.LastName, Model.FirstName, "Select Pledge")
+@*@Html.LabelFor(m => m.LastName, Model.FirstName, "Select Pledge")*@
 @*@Html.DropDownListFor(m => m.LastName, Model.FirstName) I think I need to create a view model for the list of
  strings to choose from*@
 
@@ -20,7 +20,7 @@ page/partial view to allow the user to edit the pledge class information*@
 
 
 <input type="submit" title="Submit" value="Submit"/>
-<input type="button" title="Cancel" value ="Cancel"/>
+<input type="button" title="Cancel" value ="Cancel" onclick ="location.href= '@Url.Action("Index", "Home")'"/>
 
 
 }

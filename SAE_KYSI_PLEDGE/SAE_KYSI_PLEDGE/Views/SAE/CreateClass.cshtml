@@ -6,9 +6,9 @@
 }
 
 @section featured {
-    
+
     <h2>Add Pledge Class</h2>
-    
+    <br />
     @Html.LabelFor(m => m.Pledge_Class_Name, "Class Name")
     @Html.TextBoxFor(m => m.Pledge_Class_Name)
 
@@ -20,10 +20,11 @@
 
     @Html.LabelFor(m => m.Pledge_Count, "Number Of Pledges that signed bids")
     @Html.TextBoxFor(m => m.Pledge_Count, "PledgeCount")
-
+    <br />
+    <div>
     <input type="submit" title="Submit" value="Submit"/>
-    <input  type="button" title="Cancel" value ="Cancel" onclick="~/Views/Home/Index"/>
-
+    <input type="button" title="Cancel" value ="Cancel" onclick ="location.href= '@Url.Action("Index", "Home")'"/>
+    </div>
     
     }
 
