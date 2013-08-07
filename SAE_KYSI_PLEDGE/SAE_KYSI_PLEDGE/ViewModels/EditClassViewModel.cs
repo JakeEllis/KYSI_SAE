@@ -3,29 +3,62 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using SAE_CORE.Models;
-using SAE_DAL.Repositories;
+using SAE_CORE;
+using SAE_DAL;
+using SAE_KYSI_PLEDGE;
+
 
 namespace SAE_KYSI_PLEDGE.ViewModels
 {
+    public class DropdownListItem
+    {
+        public string Text { get; set; }
+        public string Value { get; set; }
+
+    }
+
+
     public class EditClassViewModel
     {
-        //public SelectList Classes { get; private set; }
-        //PledgeClassRepo Repo = new PledgeClassRepo();
-        //PledgeClassModel Pledge = new PledgeClassModel();
+        
+        private List<DropdownListItem> Classes { get; set; }
+        public string SelectedItemID { get; set; }
 
-       //public EditClassViewModel(PledgeClassModel pledge)
-       //{
-       //    Pledge = pledge;
-       //    Classes = new SelectList(pledge.Pledge_Class_Name);
-       //}
 
-       // [Authorize]
-       // public ActionResult EditClass(string className)
-       // {
-       //     SAE_KYSI_PLEDGE Pledge = 
-       //     PledgeClassRepo Repo = Repo.getById(Pledge_Class_Name);
-       // }
+        public IEnumerable<SelectListItem> ClassList
+        {
+            get
+            {
+                var items = ClassList.Select(i => new SelectListItem { Value = i.Value, Text = i.Text});
+                return DefaultItem.Concat(items);
 
+            }
+            
+        }
+
+        public EditClassViewModel(List<DropdownListItem> items, string selected)
+        {
+            Classes = items;
+            SelectedItemID = selected;
+
+        }
+
+
+
+        public IEnumerable<SelectListItem> DefaultItem 
+        {
+            get
+            {
+                return Enumerable.Repeat(new SelectListItem
+                    {
+                        Value = "-1",
+                        Text = "Select Pledge Class"
+                    }, count: 1);
+            }
+        }
+  
+
+
+      
     }
 }

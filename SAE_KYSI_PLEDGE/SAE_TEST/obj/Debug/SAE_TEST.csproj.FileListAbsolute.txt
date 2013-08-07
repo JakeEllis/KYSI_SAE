@@ -67,13 +67,6 @@ C:\Users\Jake Ellis\Desktop\SAE\SAE_KYSI_PLEDGE\SAE_TEST\bin\System.Web.WebPages
 C:\Users\Jake Ellis\Desktop\SAE\SAE_KYSI_PLEDGE\SAE_TEST\bin\System.Web.WebPages.Razor.dll
 C:\Users\Jake Ellis\Desktop\SAE\SAE_KYSI_PLEDGE\SAE_TEST\bin\EntityFramework.dll
 C:\Users\Jake Ellis\Desktop\SAE\SAE_KYSI_PLEDGE\SAE_TEST\bin\System.Web.Optimization.dll
-C:\Users\Jake Ellis\Desktop\SAE\SAE_KYSI_PLEDGE\SAE_TEST\bin\Microsoft.Web.WebPages.OAuth.dll
-C:\Users\Jake Ellis\Desktop\SAE\SAE_KYSI_PLEDGE\SAE_TEST\bin\DotNetOpenAuth.AspNet.dll
-C:\Users\Jake Ellis\Desktop\SAE\SAE_KYSI_PLEDGE\SAE_TEST\bin\DotNetOpenAuth.Core.dll
-C:\Users\Jake Ellis\Desktop\SAE\SAE_KYSI_PLEDGE\SAE_TEST\bin\DotNetOpenAuth.OAuth.Consumer.dll
-C:\Users\Jake Ellis\Desktop\SAE\SAE_KYSI_PLEDGE\SAE_TEST\bin\DotNetOpenAuth.OAuth.dll
-C:\Users\Jake Ellis\Desktop\SAE\SAE_KYSI_PLEDGE\SAE_TEST\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
-C:\Users\Jake Ellis\Desktop\SAE\SAE_KYSI_PLEDGE\SAE_TEST\bin\DotNetOpenAuth.OpenId.dll
 C:\Users\Jake Ellis\Desktop\SAE\SAE_KYSI_PLEDGE\SAE_TEST\bin\SAE_CORE.pdb
 C:\Users\Jake Ellis\Desktop\SAE\SAE_KYSI_PLEDGE\SAE_TEST\bin\SAE_DAL.pdb
 C:\Users\Jake Ellis\Desktop\SAE\SAE_KYSI_PLEDGE\SAE_TEST\bin\SAE_KYSI_PLEDGE.pdb
@@ -88,13 +81,6 @@ C:\Users\Jake Ellis\Desktop\SAE\SAE_KYSI_PLEDGE\SAE_TEST\bin\System.Web.WebPages
 C:\Users\Jake Ellis\Desktop\SAE\SAE_KYSI_PLEDGE\SAE_TEST\bin\System.Web.WebPages.Deployment.xml
 C:\Users\Jake Ellis\Desktop\SAE\SAE_KYSI_PLEDGE\SAE_TEST\bin\System.Web.WebPages.Razor.xml
 C:\Users\Jake Ellis\Desktop\SAE\SAE_KYSI_PLEDGE\SAE_TEST\bin\EntityFramework.xml
-C:\Users\Jake Ellis\Desktop\SAE\SAE_KYSI_PLEDGE\SAE_TEST\bin\Microsoft.Web.WebPages.OAuth.xml
-C:\Users\Jake Ellis\Desktop\SAE\SAE_KYSI_PLEDGE\SAE_TEST\bin\DotNetOpenAuth.AspNet.xml
-C:\Users\Jake Ellis\Desktop\SAE\SAE_KYSI_PLEDGE\SAE_TEST\bin\DotNetOpenAuth.Core.xml
-C:\Users\Jake Ellis\Desktop\SAE\SAE_KYSI_PLEDGE\SAE_TEST\bin\DotNetOpenAuth.OAuth.Consumer.xml
-C:\Users\Jake Ellis\Desktop\SAE\SAE_KYSI_PLEDGE\SAE_TEST\bin\DotNetOpenAuth.OAuth.xml
-C:\Users\Jake Ellis\Desktop\SAE\SAE_KYSI_PLEDGE\SAE_TEST\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
-C:\Users\Jake Ellis\Desktop\SAE\SAE_KYSI_PLEDGE\SAE_TEST\bin\DotNetOpenAuth.OpenId.xml
 C:\Users\Jake Ellis\Desktop\SAE\SAE_KYSI_PLEDGE\SAE_TEST\obj\Debug\SAE_TEST.csprojResolveAssemblyReference.cache
 C:\Users\Jake Ellis\Desktop\SAE\SAE_KYSI_PLEDGE\SAE_TEST\obj\Debug\SAE_TEST.dll
 C:\Users\Jake Ellis\Desktop\SAE\SAE_KYSI_PLEDGE\SAE_TEST\obj\Debug\SAE_TEST.pdb

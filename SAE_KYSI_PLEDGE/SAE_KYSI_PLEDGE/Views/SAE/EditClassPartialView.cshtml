@@ -1,0 +1,9 @@
+﻿@{
+    ViewBag.Title = "EditClassPartialView";
+}
+
+<h2>EditClassPartialView</h2>
+
+@model SAE_KYSI_PLEDGE.ViewModels.EditClassViewModel
+
+@Html.DropDownListFor(m => m.SelectedItemID, Model.ClassList)

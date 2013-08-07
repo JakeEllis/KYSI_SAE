@@ -1,21 +1,24 @@
 ﻿@{
     ViewBag.Title = "EditClass";
     @model SAE_CORE.Models.PledgeClassModel
+    
+    
+     
 }
 
 
 
 @section featured {  
+ 
     <h1>EditClass</h1>
 
     <br />
     
     @Html.LabelFor(m => m.Pledge_Class_Name, "Select Pledge Class")
-@*@Html.DropDownListFor(m => m.Pledge_Class_Name,) I think I need to create a view model for the list of strings to choose from*@
+@Html.Action("DropDownList", "SAE", new { selected = "2", type = "Pledge Class"})
+@*@Html.DropDownListFor(m => m.SelectedItemID, new SelectList(Model.ClassList,"Value","Text"), new Dictionary<string, object> { { "data-placeholder", "Choose a sandbox..." }, { "class", "chzn-select" }, { "style", "width:200px;" } })*@
 
-    
-@* Here is where we would add the javascript to pull of the pledge class information as is then go to the next 
-page/partial view to allow the user to edit the pledge class information*@
+
 
    @* @Html.Partial("")*@
 
