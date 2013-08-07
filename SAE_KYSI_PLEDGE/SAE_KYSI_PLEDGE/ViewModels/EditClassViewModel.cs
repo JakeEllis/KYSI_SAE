@@ -8,6 +8,7 @@ using SAE_DAL;
 using SAE_KYSI_PLEDGE;
 
 
+
 namespace SAE_KYSI_PLEDGE.ViewModels
 {
     public class DropdownListItem
@@ -20,6 +21,8 @@ namespace SAE_KYSI_PLEDGE.ViewModels
 
     public class EditClassViewModel
     {
+        private List<DropdownListItem> queryable;
+
         
         private List<DropdownListItem> Classes { get; set; }
         public string SelectedItemID { get; set; }
@@ -36,15 +39,20 @@ namespace SAE_KYSI_PLEDGE.ViewModels
             
         }
 
+        public EditClassViewModel()
+        {
+
+        }
+
         public EditClassViewModel(List<DropdownListItem> items, string selected)
         {
             Classes = items;
             SelectedItemID = selected;
 
+            
         }
 
-
-
+        
         public IEnumerable<SelectListItem> DefaultItem 
         {
             get

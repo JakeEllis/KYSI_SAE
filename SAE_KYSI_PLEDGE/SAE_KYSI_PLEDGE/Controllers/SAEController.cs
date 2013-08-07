@@ -45,12 +45,16 @@ namespace SAE_KYSI_PLEDGE.Controllers
             return View();
         }
 
-
+        [ChildActionOnly]
         public ActionResult DropDownList(string type, string selected)
         {
-            var query = new EditClassViewModel(from context in _context.PLEDGE_CLASS
-                                               select new DropdownListItem { Text = context.PLEDGE_CLASS_NAME, Value = context.PLEDGE_CLASS_NAME }).ClassList();
-            return PartialView("EditClassPartialView", query);
+            //var query = from context in _context.PLEDGE_CLASS
+            //            select context.PLEDGE_CLASS_NAME;
+
+            var list = new EditClassViewModel(
+                (from a in _context.PLEDGE_CLASS select new DropdownListItem { Text = a.PLEDGE_CLASS_NAME, Value = a.PLEDGE_CLASS_NAME }).ToList(), selected);
+            
+            return PartialView("EditClassPartialView", list);
 
         }
 
