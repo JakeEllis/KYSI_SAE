@@ -11,7 +11,7 @@ namespace SAE_KYSI_PLEDGE.Controllers
 {
     public class SAEController : Controller
     {
-        SAE_DB _context = new SAE_DB();
+        
 
         public ActionResult Index()
         {
@@ -46,31 +46,50 @@ namespace SAE_KYSI_PLEDGE.Controllers
         }
 
         [ChildActionOnly]
-        public ActionResult DropDownList(string type, string selected)
+        public ActionResult ClassDropDownList(string type, string selected)
         {
-            //var query = from context in _context.PLEDGE_CLASS
-            //            select context.PLEDGE_CLASS_NAME;
+            SAE_DB _context = new SAE_DB();
 
-            var list = new EditClassViewModel(
-                (from a in _context.PLEDGE_CLASS select new DropdownListItem { Text = a.PLEDGE_CLASS_NAME, Value = a.PLEDGE_CLASS_NAME }).ToList(), selected);
-            
-            return PartialView("EditClassPartialView", list);
+            var ddlList = (from context in _context.PLEDGE_CLASS
+
+                           select new DropdownListItem { Text = context.PLEDGE_CLASS_NAME, Value = context.PLEDGE_CLASS_NAME }).ToList();
+
+            var editClassVM = new EditClassViewModel(ddlList, selected);
+
+            return PartialView("EditClassPartialView", editClassVM);
 
         }
 
+        [ChildActionOnly]
+        public ActionResult PledgeFirstDropDownList(string type, string selected)
+        {
+            SAE_DB _context = new SAE_DB();
 
-        //public List<SelectListItem> GetClasses()
-        //{
-        //    SAE_DB _context = new SAE_DB();
+            var ddlList = (from context in _context.PLEDGEs
 
-        //    var query = from context in _context.PLEDGE_CLASS
-        //                orderby context.PLEDGE_CLASS_NAME ascending
-        //                select context.PLEDGE_CLASS_NAME;
+                           select new DropdownListItem { Text = context.FIRST_NAME, Value = context.LAST_NAME }).ToList();
 
-        //    Classes = (List<SelectListItem>)query;
+            var editPledgeVM = new EditPledgeViewModel(ddlList, selected);
 
-        //    return Classes;
-        //}
+            return PartialView("EditPledgePartialView", editPledgeVM);
+
+        }
+
+        [ChildActionOnly]
+        public ActionResult PledgeLastDropDownList(string type, string selected)
+        {
+            SAE_DB _context = new SAE_DB();
+
+            var ddlList = (from context in _context.PLEDGEs
+
+                           select new DropdownListItem { Text = context.LAST_NAME, Value = context.LAST_NAME }).ToList();
+
+            var editPledgeVM = new EditPledgeViewModel(ddlList, selected);
+
+            return PartialView("EditPledgePartialView", editPledgeVM);
+
+        }
+
 
 
         public ActionResult ManagePoints()

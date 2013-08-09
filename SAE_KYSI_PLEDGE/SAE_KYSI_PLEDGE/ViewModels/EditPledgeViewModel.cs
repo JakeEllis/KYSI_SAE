@@ -8,44 +8,31 @@ using SAE_DAL;
 using SAE_KYSI_PLEDGE;
 
 
-
 namespace SAE_KYSI_PLEDGE.ViewModels
 {
-    public class DropdownListItem
+   
+
+    public class EditPledgeViewModel
     {
-        public string Text { get; set; }
-        public string Value { get; set; }
-
-    }
-
-
-    public class EditClassViewModel
-    {
-
-        private List<DropdownListItem> Classes { get; set; }
+        private List<DropdownListItem> Pledges { get; set; }
         public string SelectedItemID { get; set; }
 
 
-        public IEnumerable<SelectListItem> ClassList
+        public IEnumerable<SelectListItem> PledgeList
         {
             get
             {
-                var items = Classes.Select(i => new SelectListItem { Value = i.Value, Text = i.Text });
+                var items = Pledges.Select(i => new SelectListItem { Value = i.Value, Text = i.Text });
                 return items;
 
             }
 
         }
 
-        public EditClassViewModel(List<DropdownListItem> items, string selected)
+        public EditPledgeViewModel(List<DropdownListItem> items, string selected)
         {
-            Classes = items;
+            Pledges = items;
             SelectedItemID = selected;
-
-        }
-
-        public EditClassViewModel()
-        {
 
         }
 
@@ -56,10 +43,13 @@ namespace SAE_KYSI_PLEDGE.ViewModels
             {
                 return Enumerable.Repeat(new SelectListItem
                     {
-                        Value = "-1",
+                        Value = "1",
                         Text = "Select Pledge Class"
                     }, count: 1);
             }
         }
+  
+
+
     }
 }

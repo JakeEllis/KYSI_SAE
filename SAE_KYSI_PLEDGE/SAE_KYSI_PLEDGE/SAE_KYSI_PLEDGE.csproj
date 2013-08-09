@@ -187,6 +187,7 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\EditClassViewModel.cs" />
+    <Compile Include="ViewModels\EditPledgeViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
@@ -311,6 +312,7 @@
     <Content Include="Views\SAE\EditPledge.cshtml" />
     <Content Include="Views\SAE\ManagePoints.cshtml" />
     <Content Include="Views\SAE\EditClassPartialView.cshtml" />
+    <Content Include="Views\SAE\EditPledgePartialView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

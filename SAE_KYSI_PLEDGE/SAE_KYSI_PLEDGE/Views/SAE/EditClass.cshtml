@@ -15,12 +15,9 @@
     <br />
     
     @Html.LabelFor(m => m.Pledge_Class_Name, "Select Pledge Class")
-@Html.Action("DropDownList", "SAE", new { selected = "1", type = "Pledge Class"})
-@*@Html.DropDownListFor(m => m.SelectedItemID, new SelectList(Model.ClassList,"Value","Text"), new Dictionary<string, object> { { "data-placeholder", "Choose a sandbox..." }, { "class", "chzn-select" }, { "style", "width:200px;" } })*@
+    @Html.Action("ClassDropDownList", "SAE", new { selected = "1", type = "Pledge Class"})
 
 
-
-   @* @Html.Partial("")*@
 
     <input type="submit" title="Select" value="Select Class" onclick="showDiv()"/>
     <input type="button" title="Cancel" value ="Cancel" onclick ="location.href= '@Url.Action("Index", "Home")'"/>

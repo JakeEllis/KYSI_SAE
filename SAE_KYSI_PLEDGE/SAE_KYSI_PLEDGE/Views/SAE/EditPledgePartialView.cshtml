@@ -1,0 +1,10 @@
+﻿@{
+    ViewBag.Title = "EditPledgeViewModel";
+    
+}
+
+<h2>Edit Pledge Partial Viewl</h2>
+
+@model SAE_KYSI_PLEDGE.ViewModels.EditPledgeViewModel
+
+@Html.DropDownListFor(m => m.SelectedItemID, Model.PledgeList)
