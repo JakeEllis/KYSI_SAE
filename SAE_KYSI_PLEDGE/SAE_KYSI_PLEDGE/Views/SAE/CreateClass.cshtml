@@ -6,7 +6,7 @@
 }
 
 @section featured {
-
+    <div class="text_sae">
     <h2>Add Pledge Class</h2>
     <br />
     @Html.LabelFor(m => m.Pledge_Class_Name, "Class Name")
@@ -25,6 +25,7 @@
     <input type="submit" title="Submit" value="Submit"/>
     <input type="button" title="Cancel" value ="Cancel" onclick ="location.href= '@Url.Action("Index", "Home")'"/>
     </div>
+        </div>
     
     }
 

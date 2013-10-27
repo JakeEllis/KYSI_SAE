@@ -153,3 +153,4 @@ C:\Users\Jake Ellis\Desktop\SAE\KYSI_SAE\SAE_KYSI_PLEDGE\SAE_CORE\bin\EntityFram
 C:\Users\Jake Ellis\Desktop\SAE\KYSI_SAE\SAE_KYSI_PLEDGE\SAE_CORE\obj\Debug\SAE_CORE.csprojResolveAssemblyReference.cache
 C:\Users\Jake Ellis\Desktop\SAE\KYSI_SAE\SAE_KYSI_PLEDGE\SAE_CORE\obj\Debug\SAE_CORE.dll
 C:\Users\Jake Ellis\Desktop\SAE\KYSI_SAE\SAE_KYSI_PLEDGE\SAE_CORE\obj\Debug\SAE_CORE.pdb
+C:\Users\Jake Ellis\Desktop\SAE\KYSI_SAE\SAE_KYSI_PLEDGE\SAE_CORE\bin\SAE_CORE.dll.config

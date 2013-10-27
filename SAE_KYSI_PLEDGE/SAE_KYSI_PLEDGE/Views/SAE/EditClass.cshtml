@@ -10,36 +10,38 @@
 
 @section featured {  
  
+<div class="text_sae">
     <h1>EditClass</h1>
 
     <br />
-    
+
     @Html.LabelFor(m => m.Pledge_Class_Name, "Select Pledge Class")
-    @Html.Action("ClassDropDownList", "SAE", new { selected = "1", type = "Pledge Class"})
+    @Html.Action("ClassDropDownList", "SAE", new { selected = "1", type = "Pledge Class" })
 
 
 
-    <input type="submit" title="Select" value="Select Class" onclick="showDiv()"/>
-    <input type="button" title="Cancel" value ="Cancel" onclick ="location.href= '@Url.Action("Index", "Home")'"/>
-    
-    
-    <div id="displayinfo"  style="display:none;" class="answer_list" ><br /><br />
+    <input type="submit" title="Select" value="Select Class" onclick="showDiv()" />
+    <input type="button" title="Cancel" value="Cancel" onclick="location.href= '@Url.Action("Index", "Home")'" />
+
+
+    <div id="displayinfo" style="display:none;" class="answer_list">
+        <br /><br />
         RUSH SAE (TEST MESSAGE)
         <br />
         <br />
-        <img src ="/images/SAE.jpg" width="400" height="400" />
-    </div> 
-    
-    
-    
-     <script>
-         function showDiv() {
-             document.getElementById('displayinfo').style.display = "block";
-         }
+        <img src="/images/SAE.jpg" width="400" height="400" />
+    </div>
+
+
+
+    <script>
+        function showDiv() {
+            document.getElementById('displayinfo').style.display = "block";
+        }
     </script>
 
-
+    </div>
     @* Once the user selects the pledge class and we display the class information we should have a link to
-     edit a pledge in the pledge class.They would select the pledge name in a drop down and press a "Select" button *@
-    
-    }
+        edit a pledge in the pledge class.They would select the pledge name in a drop down and press a "Select" button *@
+
+}

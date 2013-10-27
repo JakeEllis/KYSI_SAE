@@ -2,22 +2,22 @@
     ViewBag.Title = "EditPledge";
     @model SAE_CORE.PledgeModel
 }
+<div class="text_sae">
+    <h2>EditPledge</h2>
 
-<h2>EditPledge</h2>
-
-@section featured
+    @section featured
 {
 
-@Html.LabelFor(m => m.LastName,  "Select Pledge First Name")
-@Html.Action("PledgeFirstDropDownList", "SAE", new { selected = "1", type = "Pledge First Name" })
+        @Html.LabelFor(m => m.LastName, "Select Pledge First Name")
+        @Html.Action("PledgeFirstDropDownList", "SAE", new { selected = "1", type = "Pledge First Name" })
 
-@Html.LabelFor(m => m.LastName, "Select Pledge Last Name")
-@Html.Action("PledgeLastDropDownList", "SAE", new { selected = "1", type = "Pledge Last Name" })
-
-
-
-<input type="submit" title="Submit" value="Submit"/>
-<input type="button" title="Cancel" value ="Cancel" onclick ="location.href= '@Url.Action("Index", "Home")'"/>
+        @Html.LabelFor(m => m.LastName, "Select Pledge Last Name")
+        @Html.Action("PledgeLastDropDownList", "SAE", new { selected = "1", type = "Pledge Last Name" })
 
 
-}
+
+        <input type="submit" title="Submit" value="Submit" />
+        <input type="button" title="Cancel" value="Cancel" onclick="location.href= '@Url.Action("Index", "Home")'" />
+
+        </div>
+    }

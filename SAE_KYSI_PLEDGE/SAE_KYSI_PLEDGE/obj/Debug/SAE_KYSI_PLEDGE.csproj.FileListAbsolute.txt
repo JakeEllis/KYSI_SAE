@@ -443,3 +443,4 @@ C:\Users\Jake Ellis\Desktop\SAE\KYSI_SAE\SAE_KYSI_PLEDGE\SAE_KYSI_PLEDGE\bin\zh-
 C:\Users\Jake Ellis\Desktop\SAE\KYSI_SAE\SAE_KYSI_PLEDGE\SAE_KYSI_PLEDGE\obj\Debug\SAE_KYSI_PLEDGE.csprojResolveAssemblyReference.cache
 C:\Users\Jake Ellis\Desktop\SAE\KYSI_SAE\SAE_KYSI_PLEDGE\SAE_KYSI_PLEDGE\obj\Debug\SAE_KYSI_PLEDGE.dll
 C:\Users\Jake Ellis\Desktop\SAE\KYSI_SAE\SAE_KYSI_PLEDGE\SAE_KYSI_PLEDGE\obj\Debug\SAE_KYSI_PLEDGE.pdb
+C:\Users\Jake Ellis\Desktop\SAE\KYSI_SAE\SAE_KYSI_PLEDGE\SAE_KYSI_PLEDGE\bin\SAE_KYSI_PLEDGE.dll.config

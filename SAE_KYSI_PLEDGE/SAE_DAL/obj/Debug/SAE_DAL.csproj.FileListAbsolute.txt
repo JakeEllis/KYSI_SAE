@@ -142,3 +142,4 @@ C:\Users\Jake Ellis\Desktop\SAE\KYSI_SAE\SAE_KYSI_PLEDGE\SAE_DAL\obj\Debug\SAE_D
 C:\Users\Jake Ellis\Desktop\SAE\KYSI_SAE\SAE_KYSI_PLEDGE\SAE_DAL\obj\Debug\SAE_DAL.dll
 C:\Users\Jake Ellis\Desktop\SAE\KYSI_SAE\SAE_KYSI_PLEDGE\SAE_DAL\obj\Debug\SAE_DAL.pdb
 C:\Users\Jake Ellis\Desktop\SAE\SAE_KYSI_PLEDGE\SAE_DAL\obj\Debug\SAE_DAL.csprojResolveAssemblyReference.cache
+C:\Users\Jake Ellis\Desktop\SAE\KYSI_SAE\SAE_KYSI_PLEDGE\SAE_DAL\bin\SAE_DAL.dll.config

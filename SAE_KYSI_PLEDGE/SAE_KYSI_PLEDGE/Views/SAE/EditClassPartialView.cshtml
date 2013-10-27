@@ -1,9 +1,11 @@
 ﻿@{
     ViewBag.Title = "EditClassPartialView";
 }
+<div class="text_sae">
+    <h2>EditClassPartialView</h2>
 
-<h2>EditClassPartialView</h2>
+    @model SAE_KYSI_PLEDGE.ViewModels.EditClassViewModel
 
-@model SAE_KYSI_PLEDGE.ViewModels.EditClassViewModel
+    @Html.DropDownListFor(m => m.SelectedItemID, Model.ClassList)
 
-@Html.DropDownListFor(m => m.SelectedItemID, Model.ClassList)
+</div>
