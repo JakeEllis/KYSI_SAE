@@ -101,6 +101,10 @@
     <Property Name="INITIATED_COUNT" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
     <Property Name="PLEDGE_DROP_COUNT" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
     <NavigationProperty Name="FACTs" Relationship="SAEDB.FK_FACT_PLEDGE_CLASS" FromRole="PLEDGE_CLASS" ToRole="FACT" />
+    <Property Name="PLEDGE_ED_FIRST_NAME" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="CO_PLEDGE_ED_FIRST_NAME" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="PLEDGE_ED_LAST_NAME" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="CO_PLEDGE_ED_LAST_NAME" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
   </EntityType>
   <EntityType Name="POINT_VALUES">
     <Key>

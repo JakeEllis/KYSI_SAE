@@ -4,31 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="SAEDB.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityContainer Name="SAEDBStoreContainer">
-          <EntitySet Name="FACT" EntityType="SAEDB.Store.FACT" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="PLEDGE" EntityType="SAEDB.Store.PLEDGE" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="PLEDGE_CLASS" EntityType="SAEDB.Store.PLEDGE_CLASS" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="POINT_VALUES" EntityType="SAEDB.Store.POINT_VALUES" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="POINTS" EntityType="SAEDB.Store.POINTS" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="sysdiagrams" EntityType="SAEDB.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
-          <AssociationSet Name="FK_FACT_PLEDGE" Association="SAEDB.Store.FK_FACT_PLEDGE">
-            <End Role="PLEDGE" EntitySet="PLEDGE" />
-            <End Role="FACT" EntitySet="FACT" />
-          </AssociationSet>
-          <AssociationSet Name="FK_FACT_PLEDGE_CLASS" Association="SAEDB.Store.FK_FACT_PLEDGE_CLASS">
-            <End Role="PLEDGE_CLASS" EntitySet="PLEDGE_CLASS" />
-            <End Role="FACT" EntitySet="FACT" />
-          </AssociationSet>
-          <AssociationSet Name="FK_FACT_POINT_VALUES" Association="SAEDB.Store.FK_FACT_POINT_VALUES">
-            <End Role="POINT_VALUES" EntitySet="POINT_VALUES" />
-            <End Role="FACT" EntitySet="FACT" />
-          </AssociationSet>
-          <AssociationSet Name="FK_FACT_POINTS" Association="SAEDB.Store.FK_FACT_POINTS">
-            <End Role="POINTS" EntitySet="POINTS" />
-            <End Role="FACT" EntitySet="FACT" />
-          </AssociationSet>
-        </EntityContainer>
+    <Schema Namespace="SAEDB.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="FACT">
           <Key>
             <PropertyRef Name="PLEDGE_CLASS_ID" />
@@ -54,22 +30,22 @@
           <Property Name="PHONE" Type="nvarchar" MaxLength="50" />
           <Property Name="EMAIL" Type="varchar" MaxLength="50" />
           <Property Name="GRAD_YEAR" Type="int" />
-          <Property Name="BIG_BROTHER_FIRST" Type="nchar" MaxLength="25" />
-          <Property Name="BIG_BROTHER_LAST" Type="nchar" MaxLength="25" />
         </EntityType>
         <EntityType Name="PLEDGE_CLASS">
           <Key>
             <PropertyRef Name="PLEDGE_CLASS_ID" />
           </Key>
           <Property Name="PLEDGE_CLASS_ID" Type="int" Nullable="false" />
-          <Property Name="PLEDGE_CLASS_NAME" Type="nchar" Nullable="false" MaxLength="10" />
+          <Property Name="PLEDGE_CLASS_NAME" Type="nchar" MaxLength="10" Nullable="false" />
           <Property Name="PLEDGE_CLASS_SEM" Type="nchar" MaxLength="10" />
           <Property Name="PLEDGE_CLASS_YEAR" Type="nchar" MaxLength="10" />
-          <Property Name="PLEDGE_ED" Type="nchar" Nullable="false" MaxLength="10" />
-          <Property Name="CO_PLEDGE_ED" Type="nchar" MaxLength="10" />
-          <Property Name="PLEDGE_COUNT" Type="nchar" Nullable="false" MaxLength="10" />
+          <Property Name="PLEDGE_ED_FIRST_NAME" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="CO_PLEDGE_ED_FIRST_NAME" Type="nchar" MaxLength="10" />
+          <Property Name="PLEDGE_COUNT" Type="nchar" MaxLength="10" Nullable="false" />
           <Property Name="INITIATED_COUNT" Type="nchar" MaxLength="10" />
           <Property Name="PLEDGE_DROP_COUNT" Type="nchar" MaxLength="10" />
+          <Property Name="PLEDGE_ED_LAST_NAME" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="CO_PLEDGE_ED_LAST_NAME" Type="nchar" MaxLength="10" Nullable="false" />
         </EntityType>
         <EntityType Name="POINT_VALUES">
           <Key>
@@ -105,15 +81,15 @@
           <Key>
             <PropertyRef Name="diagram_id" />
           </Key>
-          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
           <Property Name="principal_id" Type="int" Nullable="false" />
-          <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="version" Type="int" />
           <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
         <Association Name="FK_FACT_PLEDGE">
-          <End Role="PLEDGE" Type="SAEDB.Store.PLEDGE" Multiplicity="1" />
-          <End Role="FACT" Type="SAEDB.Store.FACT" Multiplicity="*" />
+          <End Role="PLEDGE" Type="Self.PLEDGE" Multiplicity="1" />
+          <End Role="FACT" Type="Self.FACT" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="PLEDGE">
               <PropertyRef Name="PLEDGE_ID" />
@@ -124,8 +100,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_FACT_PLEDGE_CLASS">
-          <End Role="PLEDGE_CLASS" Type="SAEDB.Store.PLEDGE_CLASS" Multiplicity="1" />
-          <End Role="FACT" Type="SAEDB.Store.FACT" Multiplicity="*" />
+          <End Role="PLEDGE_CLASS" Type="Self.PLEDGE_CLASS" Multiplicity="1" />
+          <End Role="FACT" Type="Self.FACT" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="PLEDGE_CLASS">
               <PropertyRef Name="PLEDGE_CLASS_ID" />
@@ -136,8 +112,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_FACT_POINT_VALUES">
-          <End Role="POINT_VALUES" Type="SAEDB.Store.POINT_VALUES" Multiplicity="1" />
-          <End Role="FACT" Type="SAEDB.Store.FACT" Multiplicity="*" />
+          <End Role="POINT_VALUES" Type="Self.POINT_VALUES" Multiplicity="1" />
+          <End Role="FACT" Type="Self.FACT" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="POINT_VALUES">
               <PropertyRef Name="POINT_VAL_ID" />
@@ -148,8 +124,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_FACT_POINTS">
-          <End Role="POINTS" Type="SAEDB.Store.POINTS" Multiplicity="1" />
-          <End Role="FACT" Type="SAEDB.Store.FACT" Multiplicity="*" />
+          <End Role="POINTS" Type="Self.POINTS" Multiplicity="1" />
+          <End Role="FACT" Type="Self.FACT" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="POINTS">
               <PropertyRef Name="POINT_ID" />
@@ -159,7 +135,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Function Name="fn_diagramobjects" ReturnType="int" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
         <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
           <Parameter Name="owner_id" Type="int" Mode="In" />
@@ -190,6 +166,30 @@
           <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
         </Function>
         <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <EntityContainer Name="SAEDBStoreContainer">
+          <EntitySet Name="FACT" EntityType="Self.FACT" Schema="dbo" p3:Type="Tables" xmlns:p3="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="PLEDGE" EntityType="Self.PLEDGE" Schema="dbo" p3:Type="Tables" xmlns:p3="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="PLEDGE_CLASS" EntityType="Self.PLEDGE_CLASS" Schema="dbo" p3:Type="Tables" xmlns:p3="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="POINT_VALUES" EntityType="Self.POINT_VALUES" Schema="dbo" p3:Type="Tables" xmlns:p3="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="POINTS" EntityType="Self.POINTS" Schema="dbo" p3:Type="Tables" xmlns:p3="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" p3:Type="Tables" xmlns:p3="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <AssociationSet Name="FK_FACT_PLEDGE" Association="Self.FK_FACT_PLEDGE">
+            <End Role="PLEDGE" EntitySet="PLEDGE" />
+            <End Role="FACT" EntitySet="FACT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FACT_PLEDGE_CLASS" Association="Self.FK_FACT_PLEDGE_CLASS">
+            <End Role="PLEDGE_CLASS" EntitySet="PLEDGE_CLASS" />
+            <End Role="FACT" EntitySet="FACT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FACT_POINT_VALUES" Association="Self.FK_FACT_POINT_VALUES">
+            <End Role="POINT_VALUES" EntitySet="POINT_VALUES" />
+            <End Role="FACT" EntitySet="FACT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FACT_POINTS" Association="Self.FK_FACT_POINTS">
+            <End Role="POINTS" EntitySet="POINTS" />
+            <End Role="FACT" EntitySet="FACT" />
+          </AssociationSet>
+        </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
@@ -295,6 +295,10 @@
           <Property Name="INITIATED_COUNT" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
           <Property Name="PLEDGE_DROP_COUNT" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
           <NavigationProperty Name="FACTs" Relationship="SAEDB.FK_FACT_PLEDGE_CLASS" FromRole="PLEDGE_CLASS" ToRole="FACT" />
+          <Property Name="PLEDGE_ED_FIRST_NAME" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="CO_PLEDGE_ED_FIRST_NAME" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="PLEDGE_ED_LAST_NAME" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="CO_PLEDGE_ED_LAST_NAME" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
         </EntityType>
         <EntityType Name="POINT_VALUES">
           <Key>
@@ -425,20 +429,20 @@
                 <ScalarProperty Name="PHONE" ColumnName="PHONE" />
                 <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
                 <ScalarProperty Name="GRAD_YEAR" ColumnName="GRAD_YEAR" />
-                <ScalarProperty Name="BIG_BROTHER_FIRST" ColumnName="BIG_BROTHER_FIRST" />
-                <ScalarProperty Name="BIG_BROTHER_LAST" ColumnName="BIG_BROTHER_LAST" />
-              </MappingFragment>
+                </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="PLEDGE_CLASS">
             <EntityTypeMapping TypeName="SAEDB.PLEDGE_CLASS">
               <MappingFragment StoreEntitySet="PLEDGE_CLASS">
+                <ScalarProperty Name="CO_PLEDGE_ED_LAST_NAME" ColumnName="CO_PLEDGE_ED_LAST_NAME" />
+                <ScalarProperty Name="PLEDGE_ED_LAST_NAME" ColumnName="PLEDGE_ED_LAST_NAME" />
+                <ScalarProperty Name="CO_PLEDGE_ED_FIRST_NAME" ColumnName="CO_PLEDGE_ED_FIRST_NAME" />
+                <ScalarProperty Name="PLEDGE_ED_FIRST_NAME" ColumnName="PLEDGE_ED_FIRST_NAME" />
                 <ScalarProperty Name="PLEDGE_CLASS_ID" ColumnName="PLEDGE_CLASS_ID" />
                 <ScalarProperty Name="PLEDGE_CLASS_NAME" ColumnName="PLEDGE_CLASS_NAME" />
                 <ScalarProperty Name="PLEDGE_CLASS_SEM" ColumnName="PLEDGE_CLASS_SEM" />
                 <ScalarProperty Name="PLEDGE_CLASS_YEAR" ColumnName="PLEDGE_CLASS_YEAR" />
-                <ScalarProperty Name="PLEDGE_ED" ColumnName="PLEDGE_ED" />
-                <ScalarProperty Name="CO_PLEDGE_ED" ColumnName="CO_PLEDGE_ED" />
                 <ScalarProperty Name="PLEDGE_COUNT" ColumnName="PLEDGE_COUNT" />
                 <ScalarProperty Name="INITIATED_COUNT" ColumnName="INITIATED_COUNT" />
                 <ScalarProperty Name="PLEDGE_DROP_COUNT" ColumnName="PLEDGE_DROP_COUNT" />
@@ -529,6 +533,7 @@
         <DesignerProperty Name="EnablePluralization" Value="True" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="UseLegacyProvider" Value="True" />
       </DesignerInfoPropertySet>
     </Options>
     <!-- Diagram content (shape and connector positions) -->

@@ -14,25 +14,14 @@ namespace SAE_CORE.Models
         public string Pledge_Class_Semester { get; set; }
         public string Pledge_Class_Year { get; set; }
         public string Pledge_Count { get; set; }
-        public string Pledge_Educator { get; set; }
-        public string Co_Pledge_Educator { get; set; }
+        public string Pledge_Educator_Last_Name { get; set; }
+        public string Pledge_Educator_First_Name { get; set; }
+        public string Co_Pledge_Educator_First_Name { get; set; }
+        public string Co_Pledge_Educator_Last_Name { get; set; }
         public string Pledge_Initiated_Count { get; set; }
         public string Pledge_Drop_Count { get; set; }
 
-        //public List<SelectListItem> Classes { get; set; }
-
-        //private List<SelectListItem> GetClasses()
-        //{
-        //    SAE_DB _context = new SAE_DB();
-
-        //    var query = from context in _context.PLEDGE_CLASS
-        //                orderby context.PLEDGE_CLASS_NAME ascending
-        //                select context.PLEDGE_CLASS_NAME;
-
-        //    Classes = (List<SelectListItem>)query;
-
-        //    return Classes;
-        //}
+      
      
 
     }

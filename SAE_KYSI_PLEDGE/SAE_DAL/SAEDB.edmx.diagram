@@ -4,10 +4,10 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="069d8581e34e4b00805acf50708af531" Name="Diagram1">
+      <Diagram DiagramId="069d8581e34e4b00805acf50708af531" Name="Diagram1" ZoomLevel="81">
         <EntityTypeShape EntityType="SAEDB.FACT" Width="1.5" PointX="3" PointY="1.375" IsExpanded="true" />
         <EntityTypeShape EntityType="SAEDB.PLEDGE" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="SAEDB.PLEDGE_CLASS" Width="1.5" PointX="0.75" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SAEDB.PLEDGE_CLASS" Width="2.625" PointX="0.625" PointY="5.75" IsExpanded="true" />
         <EntityTypeShape EntityType="SAEDB.POINT_VALUES" Width="1.5" PointX="0.75" PointY="10" IsExpanded="true" />
         <EntityTypeShape EntityType="SAEDB.POINT" Width="1.5" PointX="0.75" PointY="13.375" IsExpanded="true" />
         <EntityTypeShape EntityType="SAEDB.sysdiagram" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />

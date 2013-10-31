@@ -23,11 +23,13 @@ namespace SAE_DAL
         public string PLEDGE_CLASS_NAME { get; set; }
         public string PLEDGE_CLASS_SEM { get; set; }
         public string PLEDGE_CLASS_YEAR { get; set; }
-        public string PLEDGE_ED { get; set; }
-        public string CO_PLEDGE_ED { get; set; }
         public string PLEDGE_COUNT { get; set; }
         public string INITIATED_COUNT { get; set; }
         public string PLEDGE_DROP_COUNT { get; set; }
+        public string PLEDGE_ED_FIRST_NAME { get; set; }
+        public string CO_PLEDGE_ED_FIRST_NAME { get; set; }
+        public string PLEDGE_ED_LAST_NAME { get; set; }
+        public string CO_PLEDGE_ED_LAST_NAME { get; set; }
     
         public virtual ICollection<FACT> FACTs { get; set; }
     }

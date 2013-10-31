@@ -23,20 +23,20 @@
           <ScalarProperty Name="PHONE" ColumnName="PHONE" />
           <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
           <ScalarProperty Name="GRAD_YEAR" ColumnName="GRAD_YEAR" />
-          <ScalarProperty Name="BIG_BROTHER_FIRST" ColumnName="BIG_BROTHER_FIRST" />
-          <ScalarProperty Name="BIG_BROTHER_LAST" ColumnName="BIG_BROTHER_LAST" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="PLEDGE_CLASS">
       <EntityTypeMapping TypeName="SAEDB.PLEDGE_CLASS">
         <MappingFragment StoreEntitySet="PLEDGE_CLASS">
+          <ScalarProperty Name="CO_PLEDGE_ED_LAST_NAME" ColumnName="CO_PLEDGE_ED_LAST_NAME" />
+          <ScalarProperty Name="PLEDGE_ED_LAST_NAME" ColumnName="PLEDGE_ED_LAST_NAME" />
+          <ScalarProperty Name="CO_PLEDGE_ED_FIRST_NAME" ColumnName="CO_PLEDGE_ED_FIRST_NAME" />
+          <ScalarProperty Name="PLEDGE_ED_FIRST_NAME" ColumnName="PLEDGE_ED_FIRST_NAME" />
           <ScalarProperty Name="PLEDGE_CLASS_ID" ColumnName="PLEDGE_CLASS_ID" />
           <ScalarProperty Name="PLEDGE_CLASS_NAME" ColumnName="PLEDGE_CLASS_NAME" />
           <ScalarProperty Name="PLEDGE_CLASS_SEM" ColumnName="PLEDGE_CLASS_SEM" />
           <ScalarProperty Name="PLEDGE_CLASS_YEAR" ColumnName="PLEDGE_CLASS_YEAR" />
-          <ScalarProperty Name="PLEDGE_ED" ColumnName="PLEDGE_ED" />
-          <ScalarProperty Name="CO_PLEDGE_ED" ColumnName="CO_PLEDGE_ED" />
           <ScalarProperty Name="PLEDGE_COUNT" ColumnName="PLEDGE_COUNT" />
           <ScalarProperty Name="INITIATED_COUNT" ColumnName="INITIATED_COUNT" />
           <ScalarProperty Name="PLEDGE_DROP_COUNT" ColumnName="PLEDGE_DROP_COUNT" />

@@ -11,21 +11,21 @@ namespace SAE_KYSI_PLEDGE.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Message = "Home Controller file";
+            ViewBag.Message = "";
 
             return View();
         }
 
         public ActionResult About()
         {
-            ViewBag.Message = "Home Controller file";
+            ViewBag.Message = "";
 
             return View();
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Home Controller file";
+            ViewBag.Message = "";
 
             return View();
         }

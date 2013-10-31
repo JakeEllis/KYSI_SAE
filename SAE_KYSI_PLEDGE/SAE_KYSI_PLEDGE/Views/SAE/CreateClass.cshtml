@@ -5,27 +5,42 @@
     
 }
 
+
 @section featured {
     <div class="text_sae">
     <h2>Add Pledge Class</h2>
-    <br />
-    @Html.LabelFor(m => m.Pledge_Class_Name, "Class Name")
-    @Html.TextBoxFor(m => m.Pledge_Class_Name)
 
-    @Html.LabelFor(m => m.Pledge_Educator, "Pledge Educator First and Last Name")
-    @Html.TextBoxFor(m => m.Pledge_Educator, "PledgeEDName")
 
-    @Html.LabelFor(m => m.Co_Pledge_Educator, "Co-Pledge Educator First and Last Name")
-    @Html.TextBoxFor(m => m.Co_Pledge_Educator, "CoPledgeName")
+    @using (Html.BeginForm())
+    {
+        <br />
+        @Html.LabelFor(m => m.Pledge_Class_Name, "Class Name")
+        @Html.TextBoxFor(m => m.Pledge_Class_Name)
 
-    @Html.LabelFor(m => m.Pledge_Count, "Number Of Pledges that signed bids")
-    @Html.TextBoxFor(m => m.Pledge_Count, "PledgeCount")
-    <br />
-    <div>
-    <input type="submit" title="Submit" value="Submit"/>
-    <input type="button" title="Cancel" value ="Cancel" onclick ="location.href= '@Url.Action("Index", "Home")'"/>
-    </div>
+        @Html.LabelFor(m => m.Pledge_Educator_First_Name, "Pledge Educator First Name")
+        @Html.TextBoxFor(m => m.Pledge_Educator_First_Name, "PledgeEDFirstName")
+        
+        @Html.LabelFor(m => m.Pledge_Educator_Last_Name, "Pledge Educator Last Name")
+        @Html.TextBoxFor(m => m.Pledge_Educator_Last_Name, "PledgeEDLastName")
+
+        @Html.LabelFor(m => m.Co_Pledge_Educator_First_Name, "Co-Pledge Educator First Name")
+        @Html.TextBoxFor(m => m.Co_Pledge_Educator_First_Name, "CoPledgeFirstName")
+        
+         @Html.LabelFor(m => m.Co_Pledge_Educator_Last_Name, "Co-Pledge Educator Last Name")
+        @Html.TextBoxFor(m => m.Co_Pledge_Educator_Last_Name, "CoPledgeLastName")
+
+        @*@Html.LabelFor(m => m.Pledge_Count, "Number Of Pledges that signed bids")
+        @Html.TextBoxFor(m => m.Pledge_Count, "PledgeCount")*@
+        <br />
+
+
+        <div>
+            <input type="submit" value="Save" title="CreateClass" />
+            <input type="button" title="Cancel" value="Cancel" onclick="location.href= '@Url.Action("Index", "SAE")'" />
         </div>
-    
     }
+</div>
+
+    }
+
 

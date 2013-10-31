@@ -1,0 +1,32 @@
+﻿@{
+    ViewBag.Title = "KYSI Pledge System";
+    
+}
+
+@using SAE_KYSI_PLEDGE.Controllers;
+
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title.</h1>
+                <h2>@ViewBag.Message</h2>
+            </hgroup>
+            <p>
+                
+               
+            </p>
+            <ol class="round" id="menu">
+
+                <li class="one">@Html.ActionLink("Add a Pledge Class", "CreateClass", "SAE")</li>
+
+                <li class="two">@Html.ActionLink("Edit a Pledge Class","EditClass", "SAE" )</li>
+                
+                <li class="three">@Html.ActionLink("Edit a Pledge","EditPledge", "SAE" )</li>
+
+                <li class="four">@Html.ActionLink("Manage Points","ManagePoints", "SAE" )</li>
+
+            </ol>
+        </div>
+    </section>
+}

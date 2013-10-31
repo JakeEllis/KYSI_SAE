@@ -4,26 +4,57 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using SAE_KYSI_PLEDGE.ViewModels;
-using SAE_CORE;
+using SAE_CORE.Models;
+using SAE_DAL.Repositories;
 using SAE_DAL;
 
 namespace SAE_KYSI_PLEDGE.Controllers
 {
     public class SAEController : Controller
     {
-        
 
         public ActionResult Index()
         {
+            
             return View();
         }
 
+        [HttpGet]
         public ActionResult CreateClass()
         {
-            ViewBag.Message = "Create Pledge Class";
-         
+            ViewBag.Message = "Create A Class";
+
             return View();
         }
+
+
+        [HttpPost]
+        public ActionResult CreateClass(PledgeClassModel m)
+        {
+            if (ModelState.IsValid)
+            {
+                
+               SAE_DB _context = new SAE_DB();
+              
+                var pledgeClass = new PLEDGE_CLASS{
+                CO_PLEDGE_ED_FIRST_NAME = m.Co_Pledge_Educator_First_Name,
+                CO_PLEDGE_ED_LAST_NAME = m.Co_Pledge_Educator_Last_Name,
+                PLEDGE_ED_FIRST_NAME = m.Pledge_Educator_First_Name,
+                PLEDGE_ED_LAST_NAME = m.Pledge_Educator_Last_Name,
+                PLEDGE_CLASS_NAME = m.Pledge_Class_Name,
+                PLEDGE_CLASS_SEM = m.Pledge_Class_Semester,
+                PLEDGE_CLASS_YEAR = m.Pledge_Class_Year
+                };
+
+                _context.PLEDGE_CLASS.Add(pledgeClass);
+                _context.SaveChanges();
+
+                return RedirectToAction("Index");
+            }
+                return View("CreateClass");
+            
+        }
+       
 
         public ActionResult CreatePledge()
         {
