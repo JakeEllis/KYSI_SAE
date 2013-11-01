@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\Jake Ellis\Desktop\SAE\KYSI_SAE\SAE_KYSI_PLEDGE\SAE_DAL\SAEDB.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\Jake Ellis\Desktop\SAE_KYSI_PLEDGE-COPY\SAE_DAL\SAEDB.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

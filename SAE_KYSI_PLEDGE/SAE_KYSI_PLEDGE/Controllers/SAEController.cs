@@ -36,14 +36,18 @@ namespace SAE_KYSI_PLEDGE.Controllers
                 
                SAE_DB _context = new SAE_DB();
               
+                
                 var pledgeClass = new PLEDGE_CLASS{
-                CO_PLEDGE_ED_FIRST_NAME = m.Co_Pledge_Educator_First_Name,
-                CO_PLEDGE_ED_LAST_NAME = m.Co_Pledge_Educator_Last_Name,
-                PLEDGE_ED_FIRST_NAME = m.Pledge_Educator_First_Name,
-                PLEDGE_ED_LAST_NAME = m.Pledge_Educator_Last_Name,
-                PLEDGE_CLASS_NAME = m.Pledge_Class_Name,
-                PLEDGE_CLASS_SEM = m.Pledge_Class_Semester,
-                PLEDGE_CLASS_YEAR = m.Pledge_Class_Year
+                    CO_PLEDGE_ED_FIRST_NAME = m.Co_Pledge_Educator_First_Name,
+                    CO_PLEDGE_ED_LAST_NAME = m.Co_Pledge_Educator_Last_Name,
+                    PLEDGE_ED_FIRST_NAME = m.Pledge_Educator_First_Name,
+                    PLEDGE_ED_LAST_NAME = m.Pledge_Educator_Last_Name,
+                    PLEDGE_CLASS_NAME = m.Pledge_Class_Name,
+                    PLEDGE_CLASS_SEM = m.Pledge_Class_Semester,
+                    PLEDGE_CLASS_YEAR = m.Pledge_Class_Year,
+                    PLEDGE_COUNT = m.Pledge_Count,
+                    PLEDGE_CLASS_ID = m.Pledge_Class_ID,
+                    PLEDGE_DROP_COUNT = m.Pledge_Drop_Count
                 };
 
                 _context.PLEDGE_CLASS.Add(pledgeClass);

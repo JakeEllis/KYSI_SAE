@@ -1,25 +1,165 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="SAEDB" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-  <EntityContainer Name="SAE_DB" p1:LazyLoadingEnabled="true">
-    <EntitySet Name="FACTs" EntityType="SAEDB.FACT" />
-    <EntitySet Name="PLEDGEs" EntityType="SAEDB.PLEDGE" />
-    <EntitySet Name="PLEDGE_CLASS" EntityType="SAEDB.PLEDGE_CLASS" />
-    <EntitySet Name="POINT_VALUES" EntityType="SAEDB.POINT_VALUES" />
-    <EntitySet Name="POINTS" EntityType="SAEDB.POINT" />
-    <EntitySet Name="sysdiagrams" EntityType="SAEDB.sysdiagram" />
-    <AssociationSet Name="FK_FACT_PLEDGE" Association="SAEDB.FK_FACT_PLEDGE">
+<Schema Namespace="SAE_PLEDGE_POINTSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="FACT">
+    <Key>
+      <PropertyRef Name="PLEDGE_CLASS_ID" />
+      <PropertyRef Name="PLEDGE_ID" />
+      <PropertyRef Name="POINT_VAL_ID" />
+      <PropertyRef Name="POINT_ID" />
+    </Key>
+    <Property Name="PLEDGE_CLASS_ID" Type="Int32" Nullable="false" />
+    <Property Name="PLEDGE_ID" Type="Int32" Nullable="false" />
+    <Property Name="POINT_VAL_ID" Type="Int32" Nullable="false" />
+    <Property Name="POINT_ID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="PLEDGE" Relationship="Self.FK_FACT_PLEDGE" FromRole="FACT" ToRole="PLEDGE" />
+    <NavigationProperty Name="PLEDGE_CLASS" Relationship="Self.FK_FACT_PLEDGE_CLASS" FromRole="FACT" ToRole="PLEDGE_CLASS" />
+    <NavigationProperty Name="POINT_VALUES" Relationship="Self.FK_FACT_POINT_VALUES" FromRole="FACT" ToRole="POINT_VALUES" />
+    <NavigationProperty Name="POINT" Relationship="Self.FK_FACT_POINTS" FromRole="FACT" ToRole="POINTS" />
+  </EntityType>
+  <EntityType Name="PLEDGE">
+    <Key>
+      <PropertyRef Name="PLEDGE_ID" />
+    </Key>
+    <Property Name="PLEDGE_ID" Type="Int32" Nullable="false" />
+    <Property Name="FIRST_NAME" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="LAST_NAME" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="STREET_ADDR" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="CITY" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="ZIP" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="PHONE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="GRAD_YEAR" Type="Int32" />
+    <Property Name="BIG_BROTHER_FIRST" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="BIG_BROTHER_LAST" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="FACTs" Relationship="Self.FK_FACT_PLEDGE" FromRole="PLEDGE" ToRole="FACT" />
+  </EntityType>
+  <EntityType Name="PLEDGE_CLASS">
+    <Key>
+      <PropertyRef Name="PLEDGE_CLASS_ID" />
+    </Key>
+    <Property Name="PLEDGE_CLASS_ID" Type="Int32" Nullable="false" />
+    <Property Name="PLEDGE_CLASS_NAME" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="PLEDGE_CLASS_SEM" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="PLEDGE_CLASS_YEAR" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="PLEDGE_ED_FIRST_NAME" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="CO_PLEDGE_ED_FIRST_NAME" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="PLEDGE_COUNT" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="INITIATED_COUNT" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="PLEDGE_DROP_COUNT" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="PLEDGE_ED_LAST_NAME" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="CO_PLEDGE_ED_LAST_NAME" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="FACTs" Relationship="Self.FK_FACT_PLEDGE_CLASS" FromRole="PLEDGE_CLASS" ToRole="FACT" />
+  </EntityType>
+  <EntityType Name="POINT_VALUES">
+    <Key>
+      <PropertyRef Name="POINT_VAL_ID" />
+    </Key>
+    <Property Name="POINT_VAL_ID" Type="Int32" Nullable="false" />
+    <Property Name="PHILANTHROPY" Type="Int32" />
+    <Property Name="INTRAMURALS" Type="Int32" />
+    <Property Name="STUDY_HOURS" Type="Int32" />
+    <Property Name="OLYMPICS" Type="Int32" />
+    <Property Name="SIGNATURES" Type="Int32" />
+    <Property Name="PLEDGE_BOOK" Type="Int32" />
+    <NavigationProperty Name="FACTs" Relationship="Self.FK_FACT_POINT_VALUES" FromRole="POINT_VALUES" ToRole="FACT" />
+  </EntityType>
+  <EntityType Name="POINT">
+    <Key>
+      <PropertyRef Name="POINT_ID" />
+    </Key>
+    <Property Name="POINT_ID" Type="Int32" Nullable="false" />
+    <Property Name="ATTENDANCE_PTS" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="EXAM_1" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="EXAM_2" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="EXAM_3" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="EXAM_4" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="EXAM_5" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="EXAM_6" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="EXAM_7" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="EXAM_8" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="PHIL_HOURS" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="INTRAMURALS" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="OLYMPICS" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="FACTs" Relationship="Self.FK_FACT_POINTS" FromRole="POINTS" ToRole="FACT" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <Association Name="FK_FACT_PLEDGE">
+    <End Role="PLEDGE" Type="Self.PLEDGE" Multiplicity="1" />
+    <End Role="FACT" Type="Self.FACT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PLEDGE">
+        <PropertyRef Name="PLEDGE_ID" />
+      </Principal>
+      <Dependent Role="FACT">
+        <PropertyRef Name="PLEDGE_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FACT_PLEDGE_CLASS">
+    <End Role="PLEDGE_CLASS" Type="Self.PLEDGE_CLASS" Multiplicity="1" />
+    <End Role="FACT" Type="Self.FACT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PLEDGE_CLASS">
+        <PropertyRef Name="PLEDGE_CLASS_ID" />
+      </Principal>
+      <Dependent Role="FACT">
+        <PropertyRef Name="PLEDGE_CLASS_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FACT_POINT_VALUES">
+    <End Role="POINT_VALUES" Type="Self.POINT_VALUES" Multiplicity="1" />
+    <End Role="FACT" Type="Self.FACT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="POINT_VALUES">
+        <PropertyRef Name="POINT_VAL_ID" />
+      </Principal>
+      <Dependent Role="FACT">
+        <PropertyRef Name="POINT_VAL_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FACT_POINTS">
+    <End Role="POINTS" Type="Self.POINT" Multiplicity="1" />
+    <End Role="FACT" Type="Self.FACT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="POINTS">
+        <PropertyRef Name="POINT_ID" />
+      </Principal>
+      <Dependent Role="FACT">
+        <PropertyRef Name="POINT_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SAE_DB" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="FACTs" EntityType="Self.FACT" />
+    <EntitySet Name="PLEDGEs" EntityType="Self.PLEDGE" />
+    <EntitySet Name="PLEDGE_CLASS" EntityType="Self.PLEDGE_CLASS" />
+    <EntitySet Name="POINT_VALUES" EntityType="Self.POINT_VALUES" />
+    <EntitySet Name="POINTS" EntityType="Self.POINT" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <AssociationSet Name="FK_FACT_PLEDGE" Association="Self.FK_FACT_PLEDGE">
       <End Role="PLEDGE" EntitySet="PLEDGEs" />
       <End Role="FACT" EntitySet="FACTs" />
     </AssociationSet>
-    <AssociationSet Name="FK_FACT_PLEDGE_CLASS" Association="SAEDB.FK_FACT_PLEDGE_CLASS">
+    <AssociationSet Name="FK_FACT_PLEDGE_CLASS" Association="Self.FK_FACT_PLEDGE_CLASS">
       <End Role="PLEDGE_CLASS" EntitySet="PLEDGE_CLASS" />
       <End Role="FACT" EntitySet="FACTs" />
     </AssociationSet>
-    <AssociationSet Name="FK_FACT_POINT_VALUES" Association="SAEDB.FK_FACT_POINT_VALUES">
+    <AssociationSet Name="FK_FACT_POINT_VALUES" Association="Self.FK_FACT_POINT_VALUES">
       <End Role="POINT_VALUES" EntitySet="POINT_VALUES" />
       <End Role="FACT" EntitySet="FACTs" />
     </AssociationSet>
-    <AssociationSet Name="FK_FACT_POINTS" Association="SAEDB.FK_FACT_POINTS">
+    <AssociationSet Name="FK_FACT_POINTS" Association="Self.FK_FACT_POINTS">
       <End Role="POINTS" EntitySet="POINTS" />
       <End Role="FACT" EntitySet="FACTs" />
     </AssociationSet>
@@ -39,11 +179,11 @@
       <Parameter Name="diagramname" Mode="In" Type="String" />
       <Parameter Name="owner_id" Mode="In" Type="Int32" />
     </FunctionImport>
-    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(SAEDB.sp_helpdiagramdefinition_Result)">
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(SAE_PLEDGE_POINTSModel.sp_helpdiagramdefinition_Result)">
       <Parameter Name="diagramname" Mode="In" Type="String" />
       <Parameter Name="owner_id" Mode="In" Type="Int32" />
     </FunctionImport>
-    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(SAEDB.sp_helpdiagrams_Result)">
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(SAE_PLEDGE_POINTSModel.sp_helpdiagrams_Result)">
       <Parameter Name="diagramname" Mode="In" Type="String" />
       <Parameter Name="owner_id" Mode="In" Type="Int32" />
     </FunctionImport>
@@ -54,148 +194,6 @@
     </FunctionImport>
     <FunctionImport Name="sp_upgraddiagrams" />
   </EntityContainer>
-  <EntityType Name="FACT">
-    <Key>
-      <PropertyRef Name="PLEDGE_CLASS_ID" />
-      <PropertyRef Name="PLEDGE_ID" />
-      <PropertyRef Name="POINT_VAL_ID" />
-      <PropertyRef Name="POINT_ID" />
-    </Key>
-    <Property Name="PLEDGE_CLASS_ID" Type="Int32" Nullable="false" />
-    <Property Name="PLEDGE_ID" Type="Int32" Nullable="false" />
-    <Property Name="POINT_VAL_ID" Type="Int32" Nullable="false" />
-    <Property Name="POINT_ID" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="PLEDGE" Relationship="SAEDB.FK_FACT_PLEDGE" FromRole="FACT" ToRole="PLEDGE" />
-    <NavigationProperty Name="PLEDGE_CLASS" Relationship="SAEDB.FK_FACT_PLEDGE_CLASS" FromRole="FACT" ToRole="PLEDGE_CLASS" />
-    <NavigationProperty Name="POINT_VALUES" Relationship="SAEDB.FK_FACT_POINT_VALUES" FromRole="FACT" ToRole="POINT_VALUES" />
-    <NavigationProperty Name="POINT" Relationship="SAEDB.FK_FACT_POINTS" FromRole="FACT" ToRole="POINTS" />
-  </EntityType>
-  <EntityType Name="PLEDGE">
-    <Key>
-      <PropertyRef Name="PLEDGE_ID" />
-    </Key>
-    <Property Name="PLEDGE_ID" Type="Int32" Nullable="false" />
-    <Property Name="FIRST_NAME" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
-    <Property Name="LAST_NAME" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
-    <Property Name="STREET_ADDR" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
-    <Property Name="CITY" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
-    <Property Name="ZIP" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
-    <Property Name="PHONE" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
-    <Property Name="EMAIL" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-    <Property Name="GRAD_YEAR" Type="Int32" />
-    <Property Name="BIG_BROTHER_FIRST" Type="String" MaxLength="25" Unicode="true" FixedLength="true" />
-    <Property Name="BIG_BROTHER_LAST" Type="String" MaxLength="25" Unicode="true" FixedLength="true" />
-    <NavigationProperty Name="FACTs" Relationship="SAEDB.FK_FACT_PLEDGE" FromRole="PLEDGE" ToRole="FACT" />
-  </EntityType>
-  <EntityType Name="PLEDGE_CLASS">
-    <Key>
-      <PropertyRef Name="PLEDGE_CLASS_ID" />
-    </Key>
-    <Property Name="PLEDGE_CLASS_ID" Type="Int32" Nullable="false" />
-    <Property Name="PLEDGE_CLASS_NAME" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="true" />
-    <Property Name="PLEDGE_CLASS_SEM" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
-    <Property Name="PLEDGE_CLASS_YEAR" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
-    <Property Name="PLEDGE_ED" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="true" />
-    <Property Name="CO_PLEDGE_ED" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
-    <Property Name="PLEDGE_COUNT" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="true" />
-    <Property Name="INITIATED_COUNT" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
-    <Property Name="PLEDGE_DROP_COUNT" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
-    <NavigationProperty Name="FACTs" Relationship="SAEDB.FK_FACT_PLEDGE_CLASS" FromRole="PLEDGE_CLASS" ToRole="FACT" />
-    <Property Name="PLEDGE_ED_FIRST_NAME" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
-    <Property Name="CO_PLEDGE_ED_FIRST_NAME" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-    <Property Name="PLEDGE_ED_LAST_NAME" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
-    <Property Name="CO_PLEDGE_ED_LAST_NAME" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
-  </EntityType>
-  <EntityType Name="POINT_VALUES">
-    <Key>
-      <PropertyRef Name="POINT_VAL_ID" />
-    </Key>
-    <Property Name="POINT_VAL_ID" Type="Int32" Nullable="false" />
-    <Property Name="PHILANTHROPY" Type="Int32" />
-    <Property Name="INTRAMURALS" Type="Int32" />
-    <Property Name="STUDY_HOURS" Type="Int32" />
-    <Property Name="OLYMPICS" Type="Int32" />
-    <Property Name="SIGNATURES" Type="Int32" />
-    <Property Name="PLEDGE_BOOK" Type="Int32" />
-    <NavigationProperty Name="FACTs" Relationship="SAEDB.FK_FACT_POINT_VALUES" FromRole="POINT_VALUES" ToRole="FACT" />
-  </EntityType>
-  <EntityType Name="POINT">
-    <Key>
-      <PropertyRef Name="POINT_ID" />
-    </Key>
-    <Property Name="POINT_ID" Type="Int32" Nullable="false" />
-    <Property Name="ATTENDANCE_PTS" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
-    <Property Name="EXAM_1" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
-    <Property Name="EXAM_2" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
-    <Property Name="EXAM_3" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
-    <Property Name="EXAM_4" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
-    <Property Name="EXAM_5" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
-    <Property Name="EXAM_6" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
-    <Property Name="EXAM_7" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
-    <Property Name="EXAM_8" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
-    <Property Name="PHIL_HOURS" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
-    <Property Name="INTRAMURALS" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
-    <Property Name="OLYMPICS" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
-    <NavigationProperty Name="FACTs" Relationship="SAEDB.FK_FACT_POINTS" FromRole="POINTS" ToRole="FACT" />
-  </EntityType>
-  <EntityType Name="sysdiagram">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
-    <Property Name="principal_id" Type="Int32" Nullable="false" />
-    <Property Name="diagram_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-    <Property Name="version" Type="Int32" />
-    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
-  </EntityType>
-  <Association Name="FK_FACT_PLEDGE">
-    <End Role="PLEDGE" Type="SAEDB.PLEDGE" Multiplicity="1" />
-    <End Role="FACT" Type="SAEDB.FACT" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="PLEDGE">
-        <PropertyRef Name="PLEDGE_ID" />
-      </Principal>
-      <Dependent Role="FACT">
-        <PropertyRef Name="PLEDGE_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_FACT_PLEDGE_CLASS">
-    <End Role="PLEDGE_CLASS" Type="SAEDB.PLEDGE_CLASS" Multiplicity="1" />
-    <End Role="FACT" Type="SAEDB.FACT" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="PLEDGE_CLASS">
-        <PropertyRef Name="PLEDGE_CLASS_ID" />
-      </Principal>
-      <Dependent Role="FACT">
-        <PropertyRef Name="PLEDGE_CLASS_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_FACT_POINT_VALUES">
-    <End Role="POINT_VALUES" Type="SAEDB.POINT_VALUES" Multiplicity="1" />
-    <End Role="FACT" Type="SAEDB.FACT" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="POINT_VALUES">
-        <PropertyRef Name="POINT_VAL_ID" />
-      </Principal>
-      <Dependent Role="FACT">
-        <PropertyRef Name="POINT_VAL_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_FACT_POINTS">
-    <End Role="POINTS" Type="SAEDB.POINT" Multiplicity="1" />
-    <End Role="FACT" Type="SAEDB.FACT" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="POINTS">
-        <PropertyRef Name="POINT_ID" />
-      </Principal>
-      <Dependent Role="FACT">
-        <PropertyRef Name="POINT_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <ComplexType Name="sp_helpdiagramdefinition_Result">
     <Property Type="Int32" Name="version" Nullable="true" />
     <Property Type="Binary" Name="definition" Nullable="true" />

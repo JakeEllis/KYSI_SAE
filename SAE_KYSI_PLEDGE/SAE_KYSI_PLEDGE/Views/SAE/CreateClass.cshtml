@@ -4,7 +4,7 @@
     @model SAE_CORE.Models.PledgeClassModel
     
 }
-
+ 
 
 @section featured {
     <div class="text_sae">
@@ -26,11 +26,14 @@
         @Html.LabelFor(m => m.Co_Pledge_Educator_First_Name, "Co-Pledge Educator First Name")
         @Html.TextBoxFor(m => m.Co_Pledge_Educator_First_Name, "CoPledgeFirstName")
         
-         @Html.LabelFor(m => m.Co_Pledge_Educator_Last_Name, "Co-Pledge Educator Last Name")
+        @Html.LabelFor(m => m.Co_Pledge_Educator_Last_Name, "Co-Pledge Educator Last Name")
         @Html.TextBoxFor(m => m.Co_Pledge_Educator_Last_Name, "CoPledgeLastName")
+          
+        @Html.LabelFor(m => m.Pledge_Class_Semester, "Semester")
+        @Html.TextBoxFor(m => m.Pledge_Class_Semester, "PledgeClassSemester")
 
-        @*@Html.LabelFor(m => m.Pledge_Count, "Number Of Pledges that signed bids")
-        @Html.TextBoxFor(m => m.Pledge_Count, "PledgeCount")*@
+        @Html.LabelFor(m => m.Pledge_Count, "Number Of Pledges that signed bids")
+        @Html.TextBoxFor(m => m.Pledge_Count, "PledgeCount")
         <br />
 
 

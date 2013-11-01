@@ -9,7 +9,7 @@ namespace SAE_CORE.Models
 {
     public class PledgeClassModel : Controller
     {
-        public string Pledge_Class_ID { get; set; }
+        public int Pledge_Class_ID { get; set; }
         public string Pledge_Class_Name { get; set; }
         public string Pledge_Class_Semester { get; set; }
         public string Pledge_Class_Year { get; set; }
