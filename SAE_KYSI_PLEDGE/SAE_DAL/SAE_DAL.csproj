@@ -114,9 +114,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FACT.cs">
-      <DependentUpon>SAEDB.tt</DependentUpon>
-    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -154,12 +151,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SAEDB.edmx</DependentUpon>
     </Compile>
-    <Compile Include="sp_helpdiagramdefinition_Result.cs">
-      <DependentUpon>SAEDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sp_helpdiagrams_Result.cs">
-      <DependentUpon>SAEDB.tt</DependentUpon>
-    </Compile>
+    <Compile Include="sp_helpdiagramdefinition_Result.cs" />
+    <Compile Include="sp_helpdiagrams_Result.cs" />
     <Compile Include="sysdiagram.cs">
       <DependentUpon>SAEDB.tt</DependentUpon>
     </Compile>
@@ -169,7 +162,9 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Content Include="Global.asax" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>

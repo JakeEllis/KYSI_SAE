@@ -2,22 +2,48 @@
     ViewBag.Title = "EditPledge";
     @model SAE_CORE.PledgeModel
 }
-<div class="text_sae">
-    <h2>EditPledge</h2>
+
+  
 
     @section featured
 {
+<div class="text_sae">
+    <h2>Edit Pledge Information</h2>
+        <br />
 
-        @Html.LabelFor(m => m.LastName, "Select Pledge First Name")
+    @Html.LabelFor(m => m.FirstName, "Select Pledge First Name")
+    @Html.Action("PledgeFirstDropDownList", "SAE", new { selected = "1", type = "Pledge First Name" })
+
+    @Html.LabelFor(m => m.LastName, "Select Pledge Last Name")
+    @Html.Action("PledgeLastDropDownList", "SAE", new { selected = "1", type = "Pledge Last Name" })
+
+    <input type="submit" title="Select" value="Select Class" onclick="showDiv()" />
+    <input type="button" title="Cancel" value="Cancel" onclick="location.href= '@Url.Action("Index", "SAE")'" />
+
+
+    @*<div id="displayinfo" style="display:none;" class="answer_list">
+        
+
+        @Html.LabelFor(m => m.FirstName, "Select Pledge First Name")
         @Html.Action("PledgeFirstDropDownList", "SAE", new { selected = "1", type = "Pledge First Name" })
 
         @Html.LabelFor(m => m.LastName, "Select Pledge Last Name")
         @Html.Action("PledgeLastDropDownList", "SAE", new { selected = "1", type = "Pledge Last Name" })
 
+        <img src="/images/SAE.jpg" width="400" height="400" />
+    </div>*@
 
 
-        <input type="submit" title="Submit" value="Submit" />
-        <input type="button" title="Cancel" value="Cancel" onclick="location.href= '@Url.Action("Index", "SAE")'" />
 
-        </div>
+    @*<script>
+        function showDiv() {
+          
+    @Html.Action("PledgeFirstDropDownList", "SAE", new { selected = "1", type = "Pledge First Name" })
+
+            document.getElementById('displayinfo').style.display = "block";
+        }
+    </script>*@
+
+
+</div>
     }

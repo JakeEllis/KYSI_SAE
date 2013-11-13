@@ -16,7 +16,7 @@ namespace SAE_DAL
     {
         public POINT()
         {
-            this.FACTs = new HashSet<FACT>();
+            this.PLEDGEs = new HashSet<PLEDGE>();
         }
     
         public int POINT_ID { get; set; }
@@ -32,7 +32,9 @@ namespace SAE_DAL
         public string PHIL_HOURS { get; set; }
         public string INTRAMURALS { get; set; }
         public string OLYMPICS { get; set; }
+        public int POINT_VAL_ID { get; set; }
     
-        public virtual ICollection<FACT> FACTs { get; set; }
+        public virtual POINT_VALUES POINT_VALUES { get; set; }
+        public virtual ICollection<PLEDGE> PLEDGEs { get; set; }
     }
 }

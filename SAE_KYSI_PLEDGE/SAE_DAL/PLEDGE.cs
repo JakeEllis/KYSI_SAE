@@ -16,7 +16,7 @@ namespace SAE_DAL
     {
         public PLEDGE()
         {
-            this.FACTs = new HashSet<FACT>();
+            this.POINTS = new HashSet<POINT>();
         }
     
         public int PLEDGE_ID { get; set; }
@@ -24,13 +24,14 @@ namespace SAE_DAL
         public string LAST_NAME { get; set; }
         public string STREET_ADDR { get; set; }
         public string CITY { get; set; }
-        public string ZIP { get; set; }
+        public Nullable<int> ZIP { get; set; }
         public string PHONE { get; set; }
         public string EMAIL { get; set; }
         public Nullable<int> GRAD_YEAR { get; set; }
         public string BIG_BROTHER_FIRST { get; set; }
         public string BIG_BROTHER_LAST { get; set; }
+        public int PLEDGE_CLASS_ID { get; set; }
     
-        public virtual ICollection<FACT> FACTs { get; set; }
+        public virtual ICollection<POINT> POINTS { get; set; }
     }
 }

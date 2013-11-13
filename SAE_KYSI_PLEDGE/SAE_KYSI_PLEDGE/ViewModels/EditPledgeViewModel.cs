@@ -11,7 +11,6 @@ using SAE_KYSI_PLEDGE;
 namespace SAE_KYSI_PLEDGE.ViewModels
 {
    
-
     public class EditPledgeViewModel
     {
         private List<DropdownListItem> Pledges { get; set; }

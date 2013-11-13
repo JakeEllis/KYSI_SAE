@@ -180,8 +180,8 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\SAEController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\SAEController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -309,12 +309,13 @@
     </Content>
     <Content Include="Views\SAE\CreateClass.cshtml" />
     <Content Include="Views\SAE\EditClass.cshtml" />
-    <Content Include="Views\SAE\CreatePledge.cshtml" />
     <Content Include="Views\SAE\EditPledge.cshtml" />
     <Content Include="Views\SAE\ManagePoints.cshtml" />
     <Content Include="Views\SAE\EditClassPartialView.cshtml" />
     <Content Include="Views\SAE\EditPledgePartialView.cshtml" />
     <Content Include="Views\SAE\Index.cshtml" />
+    <Content Include="Views\SAE\AddPledgeToPledgeClassPartialView.cshtml" />
+    <Content Include="Views\SAE\CreatePledge.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

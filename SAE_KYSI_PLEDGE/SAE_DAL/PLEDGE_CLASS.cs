@@ -14,23 +14,16 @@ namespace SAE_DAL
     
     public partial class PLEDGE_CLASS
     {
-        public PLEDGE_CLASS()
-        {
-            this.FACTs = new HashSet<FACT>();
-        }
-    
         public int PLEDGE_CLASS_ID { get; set; }
         public string PLEDGE_CLASS_NAME { get; set; }
         public string PLEDGE_CLASS_SEM { get; set; }
-        public string PLEDGE_CLASS_YEAR { get; set; }
+        public Nullable<System.DateTime> PLEDGE_CLASS_YEAR { get; set; }
         public string PLEDGE_ED_FIRST_NAME { get; set; }
         public string CO_PLEDGE_ED_FIRST_NAME { get; set; }
-        public string PLEDGE_COUNT { get; set; }
-        public string INITIATED_COUNT { get; set; }
-        public string PLEDGE_DROP_COUNT { get; set; }
+        public int PLEDGE_COUNT { get; set; }
+        public Nullable<int> INITIATED_COUNT { get; set; }
+        public Nullable<int> PLEDGE_DROP_COUNT { get; set; }
         public string PLEDGE_ED_LAST_NAME { get; set; }
         public string CO_PLEDGE_ED_LAST_NAME { get; set; }
-    
-        public virtual ICollection<FACT> FACTs { get; set; }
     }
 }

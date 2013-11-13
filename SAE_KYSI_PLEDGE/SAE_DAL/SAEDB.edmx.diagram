@@ -4,17 +4,14 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="7b87c8a9c53d4c95b6d4c7b211a94502" Name="Diagram1">
-        <EntityTypeShape EntityType="SAE_PLEDGE_POINTSModel.FACT" Width="1.5" PointX="3" PointY="1.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="SAE_PLEDGE_POINTSModel.PLEDGE" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="SAE_PLEDGE_POINTSModel.PLEDGE_CLASS" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SAE_PLEDGE_POINTSModel.POINT_VALUES" Width="1.5" PointX="0.75" PointY="10.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SAE_PLEDGE_POINTSModel.POINT" Width="1.5" PointX="0.75" PointY="14.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="SAE_PLEDGE_POINTSModel.sysdiagram" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
-        <AssociationConnector Association="SAE_PLEDGE_POINTSModel.FK_FACT_PLEDGE" ManuallyRouted="false" />
-        <AssociationConnector Association="SAE_PLEDGE_POINTSModel.FK_FACT_PLEDGE_CLASS" ManuallyRouted="false" />
-        <AssociationConnector Association="SAE_PLEDGE_POINTSModel.FK_FACT_POINT_VALUES" ManuallyRouted="false" />
-        <AssociationConnector Association="SAE_PLEDGE_POINTSModel.FK_FACT_POINTS" ManuallyRouted="false" />
+      <Diagram DiagramId="09cf3dc619f14022affc086fa474af37" Name="Diagram1">
+        <EntityTypeShape EntityType="SAEDB.PLEDGE" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SAEDB.PLEDGE_CLASS" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SAEDB.POINT_VALUES" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SAEDB.POINT" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="SAEDB.sysdiagram" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
+        <AssociationConnector Association="SAEDB.FK_POINTS_POINT_VALUES" ManuallyRouted="false" />
+        <AssociationConnector Association="SAEDB.FACT" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

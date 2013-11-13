@@ -28,7 +28,6 @@ namespace SAE_DAL
             throw new UnintentionalCodeFirstException();
         }
     
-        public DbSet<FACT> FACTs { get; set; }
         public DbSet<PLEDGE> PLEDGEs { get; set; }
         public DbSet<PLEDGE_CLASS> PLEDGE_CLASS { get; set; }
         public DbSet<POINT_VALUES> POINT_VALUES { get; set; }

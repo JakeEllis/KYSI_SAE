@@ -7,7 +7,7 @@
  
 
 @section featured {
-    <div class="text_sae">
+ <div class="text_sae">
     <h2>Add Pledge Class</h2>
 
 
@@ -15,7 +15,7 @@
     {
         <br />
         @Html.LabelFor(m => m.Pledge_Class_Name, "Class Name")
-        @Html.TextBoxFor(m => m.Pledge_Class_Name)
+        @Html.TextBoxFor(m => m.Pledge_Class_Name, "ClassName")
 
         @Html.LabelFor(m => m.Pledge_Educator_First_Name, "Pledge Educator First Name")
         @Html.TextBoxFor(m => m.Pledge_Educator_First_Name, "PledgeEDFirstName")
@@ -38,12 +38,12 @@
 
 
         <div>
-            <input type="submit" value="Save" title="CreateClass" />
+            <input type="submit" title="CreateClass" value="Save" />
             <input type="button" title="Cancel" value="Cancel" onclick="location.href= '@Url.Action("Index", "SAE")'" />
         </div>
     }
 </div>
 
-    }
+}
 
 

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using SAE_KYSI_PLEDGE.ViewModels;
-using SAE_CORE.Models;
-using SAE_DAL.Repositories;
 using SAE_DAL;
+using SAE_CORE;
+using SAE_CORE.Models;
 
 namespace SAE_KYSI_PLEDGE.Controllers
 {
@@ -15,11 +15,16 @@ namespace SAE_KYSI_PLEDGE.Controllers
 
         public ActionResult Index()
         {
-            
+
             return View();
         }
 
-        [HttpGet]
+
+
+
+        #region Create Class
+
+        [HttpGet] // the create class constructor
         public ActionResult CreateClass()
         {
             ViewBag.Message = "Create A Class";
@@ -28,16 +33,17 @@ namespace SAE_KYSI_PLEDGE.Controllers
         }
 
 
-        [HttpPost]
+        [HttpPost] // Saving the new pledge class to the database
         public ActionResult CreateClass(PledgeClassModel m)
         {
             if (ModelState.IsValid)
             {
-                
-               SAE_DB _context = new SAE_DB();
-              
-                
-                var pledgeClass = new PLEDGE_CLASS{
+
+                SAE_DB _context = new SAE_DB();
+
+
+                var pledgeClass = new PLEDGE_CLASS
+                {
                     CO_PLEDGE_ED_FIRST_NAME = m.Co_Pledge_Educator_First_Name,
                     CO_PLEDGE_ED_LAST_NAME = m.Co_Pledge_Educator_Last_Name,
                     PLEDGE_ED_FIRST_NAME = m.Pledge_Educator_First_Name,
@@ -47,38 +53,108 @@ namespace SAE_KYSI_PLEDGE.Controllers
                     PLEDGE_CLASS_YEAR = m.Pledge_Class_Year,
                     PLEDGE_COUNT = m.Pledge_Count,
                     PLEDGE_CLASS_ID = m.Pledge_Class_ID,
-                    PLEDGE_DROP_COUNT = m.Pledge_Drop_Count
+                    PLEDGE_DROP_COUNT = m.Pledge_Drop_Count,
+                    INITIATED_COUNT = m.Pledge_Initiated_Count
                 };
 
                 _context.PLEDGE_CLASS.Add(pledgeClass);
                 _context.SaveChanges();
+                
 
-                return RedirectToAction("Index");
+                return RedirectToAction("CreatePledge");
             }
-                return View("CreateClass");
-            
-        }
-       
+            return View("CreateClass");
 
+        }
+        #endregion
+
+
+
+        #region Create Pledge
+
+        [HttpGet] //The constructor for the create pledge view
         public ActionResult CreatePledge()
         {
-            ViewBag.Message = "Create Pledge";
 
             return View();
         }
 
+        [HttpPost] //Saving the pledge information to the database
+        public ActionResult CreatePledge(PledgeModel m)
+        {
+            if (ModelState.IsValid)
+            {
+                SAE_DB _context = new SAE_DB();
+
+                var pledge = new PLEDGE
+                {
+                    FIRST_NAME = m.FirstName,
+                    LAST_NAME = m.LastName,
+                    PHONE = m.PhoneNumber,
+                    STREET_ADDR = m.Street_Address,
+                    CITY = m.City,
+                    EMAIL = m.Email,
+                    ZIP = m.ZipCode,
+                    BIG_BROTHER_FIRST = m.BigBro_First,
+                    BIG_BROTHER_LAST = m.BigBro_Last,
+                    GRAD_YEAR = m.GradYear,
+                    PLEDGE_ID = m.PledgeID,
+                    PLEDGE_CLASS_ID = m.Pledge_Class_ID
+                };
+
+                _context.PLEDGEs.Add(pledge);
+                _context.SaveChanges();
+
+                return RedirectToAction("CreatePledge");
+            }
+            return View("CreatePledge");
+        }
+
+        //public JsonResult PledgeList()
+        //{
+        //   // SAE_DB _context = new SAE_DB();
+
+        //    return null;//Json(Data, JsonRequestBehavior.AllowGet);
+        //}
+
+
+        //AddPledgeToClass is to populate the readonly portion above the 
+        [ChildActionOnly]                 // pledge information to display the class information they are being added to
+        public ActionResult AddPledgeToClass(string type, string selected)
+        {
+            SAE_DB _context = new SAE_DB();
+
+
+            //var ddlList = (from context in _context.PLEDGE_CLASS
+
+            //               select new DropdownListItem { Text = context.PLEDGE_CLASS_NAME, Value = context.PLEDGE_CLASS_NAME }).ToList();
+
+            //var pledgeClassVM = new EditClassViewModel(ddlList, selected);
+
+            //return PartialView("AddPledgeToPledgeClassPartialView", pledgeClassVM);
+            return View();
+
+        }
+
+        #endregion
+
+
+
+        #region edit pledge
         public ActionResult EditPledge()
         {
-            ViewBag.Message = "Edit Pledge";
-            
             return View();
         }
 
+        #endregion
+
+        #region Edit Class
         public ActionResult EditClass()
         {
-            
+
             return View();
         }
+
 
         [ChildActionOnly]
         public ActionResult ClassDropDownList(string type, string selected)
@@ -94,7 +170,9 @@ namespace SAE_KYSI_PLEDGE.Controllers
             return PartialView("EditClassPartialView", editClassVM);
 
         }
+        #endregion
 
+        #region Edit Pledge
         [ChildActionOnly]
         public ActionResult PledgeFirstDropDownList(string type, string selected)
         {
@@ -125,7 +203,9 @@ namespace SAE_KYSI_PLEDGE.Controllers
 
         }
 
+        #endregion
 
+        #region points
 
         public ActionResult ManagePoints()
         {
@@ -133,6 +213,8 @@ namespace SAE_KYSI_PLEDGE.Controllers
 
             return View();
         }
+
+        #endregion
 
     }
 }

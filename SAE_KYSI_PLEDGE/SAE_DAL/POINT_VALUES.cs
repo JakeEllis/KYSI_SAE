@@ -16,7 +16,7 @@ namespace SAE_DAL
     {
         public POINT_VALUES()
         {
-            this.FACTs = new HashSet<FACT>();
+            this.POINTS = new HashSet<POINT>();
         }
     
         public int POINT_VAL_ID { get; set; }
@@ -27,6 +27,6 @@ namespace SAE_DAL
         public Nullable<int> SIGNATURES { get; set; }
         public Nullable<int> PLEDGE_BOOK { get; set; }
     
-        public virtual ICollection<FACT> FACTs { get; set; }
+        public virtual ICollection<POINT> POINTS { get; set; }
     }
 }

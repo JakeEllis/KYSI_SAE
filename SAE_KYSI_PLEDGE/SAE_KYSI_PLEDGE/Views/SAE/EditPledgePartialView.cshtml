@@ -4,10 +4,11 @@
 }
 <div class="text_sae">
 
-    <h2>Edit Pledge Partial Viewl</h2>
-
     @model SAE_KYSI_PLEDGE.ViewModels.EditPledgeViewModel
 
-    @Html.DropDownListFor(m => m.SelectedItemID, Model.PledgeList)
+    @*@Html.DropDownListFor(m => m.SelectedItemID, Model.PledgeList)*@
+
+    @Html.LabelFor(m => m.PledgeList, "Select Pledge Class")
+    @Html.Action("ClassDropDownList", "SAE", new { selected = "1", type = "Pledge Class" })
 
 </div>

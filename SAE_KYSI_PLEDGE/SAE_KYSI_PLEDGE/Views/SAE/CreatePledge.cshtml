@@ -1,45 +1,64 @@
 ﻿@{
-    ViewBag.Title = "CreatePledge";
-    @model SAE_CORE.PledgeModel 
+    ViewBag.Title = "Add A Pledge";
+
+    @model SAE_CORE.PledgeModel
 }
 
-@section featured {
-    
-<div class="text_sae">
-    <h2>CreatePledge</h2>
+@section featured
+    {
+    <div class="text_sae">
+        <h2>Add Pledges to Pledge Class </h2>
 
-    @Html.LabelFor(m => m.FirstName, "First Name")
-    @Html.TextBoxFor(m => m.FirstName)
+        @*@Html.Partial("~/Views/SAE/AddPledgeToPledgeClassPartialView.cshtml",SAE_CORE.Models.PledgeClassModel)*@
 
-    @Html.LabelFor(m => m.LastName, "Last Name")
-    @Html.TextBoxFor(m => m.LastName)
+        @using (Html.BeginForm())
+        {
 
-    @Html.LabelFor(m => m.PhoneNumber, "Phone Number")
-    @Html.TextBoxFor(m => m.PhoneNumber)
 
-    @Html.LabelFor(m => m.Street_Address, "Street Address")
-    @Html.TextBoxFor(m => m.Street_Address)
+            @*style="display:none;" class="answer_list"*@
 
-    @Html.LabelFor(m => m.City, "City")
-    @Html.TextBoxFor(m => m.City)
+            @Html.LabelFor(m => m.FirstName, "First Name")
+            @Html.TextBoxFor(m => m.FirstName, "FirstName")
 
-    @Html.LabelFor(m => m.ZipCode, "Zip Code")
-    @Html.TextBoxFor(m => m.ZipCode)
+            @Html.LabelFor(m => m.LastName, "Last Name")
+            @Html.TextBoxFor(m => m.LastName)
 
-    @Html.LabelFor(m => m.Email, "Email")
-    @Html.TextBoxFor(m => m.Email)
+            @Html.LabelFor(m => m.PhoneNumber, "Phone Number")
+            @Html.TextBoxFor(m => m.PhoneNumber)
 
-    @Html.LabelFor(m => m.GradYear, "Expected Grad Year")
-    @Html.TextBoxFor(m => m.GradYear)
+            @Html.LabelFor(m => m.Street_Address, "Street Address")
+            @Html.TextBoxFor(m => m.Street_Address)
 
-    @Html.LabelFor(m => m.BigBro_First, "Big Brother First Name")
-    @Html.TextBoxFor(m => m.BigBro_First)
+            @Html.LabelFor(m => m.City, "City")
+            @Html.TextBoxFor(m => m.City)
 
-    @Html.LabelFor(m => m.BigBro_Last, "Big Brother Last Name")
-    @Html.TextBoxFor(m => m.BigBro_Last)
+            @Html.LabelFor(m => m.ZipCode, "Zip Code")
+            @Html.TextBoxFor(m => m.ZipCode)
 
-    <input type="submit" title="Submit" value="Submit" />
-    <input type="button" title="Cancel" value="Cancel" onclick="location.href= '@Url.Action("Index", "SAE")'" />
+            @Html.LabelFor(m => m.Email, "Email")
+            @Html.TextBoxFor(m => m.Email)
+
+            @Html.LabelFor(m => m.GradYear, "Expected Grad Year")
+            @Html.TextBoxFor(m => m.GradYear)
+
+            @Html.LabelFor(m => m.BigBro_First, "Big Brother First Name")
+            @Html.TextBoxFor(m => m.BigBro_First)
+
+            @Html.LabelFor(m => m.BigBro_Last, "Big Brother Last Name")
+            @Html.TextBoxFor(m => m.BigBro_Last)
+
+
+            <div>
+                <input type="submit" title="CreatePledge" value="Save" />
+                <input type="button" title="Cancel" value="Cancel" onclick="location.href= '@Url.Action("Index", "SAE")'" />
+            </div>
+        }
     </div>
+
 }
+
+
+
+
+
 
