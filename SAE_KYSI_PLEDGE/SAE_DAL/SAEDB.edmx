@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="SAEDB.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="SAEDB.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <!--Errors Found During Generation:
 warning 6002: The table/view 'SAE_PLEDGE_POINTS.dbo.FACT' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="FACT">
@@ -19,7 +19,7 @@ warning 6002: The table/view 'SAE_PLEDGE_POINTS.dbo.FACT' does not have a primar
           <Key>
             <PropertyRef Name="PLEDGE_ID" />
           </Key>
-          <Property Name="PLEDGE_ID" Type="int" Nullable="false" />
+          <Property Name="PLEDGE_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="FIRST_NAME" Type="text" />
           <Property Name="LAST_NAME" Type="text" />
           <Property Name="STREET_ADDR" Type="nchar" MaxLength="200" />
@@ -36,7 +36,7 @@ warning 6002: The table/view 'SAE_PLEDGE_POINTS.dbo.FACT' does not have a primar
           <Key>
             <PropertyRef Name="PLEDGE_CLASS_ID" />
           </Key>
-          <Property Name="PLEDGE_CLASS_ID" Type="int" Nullable="false" />
+          <Property Name="PLEDGE_CLASS_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="PLEDGE_CLASS_NAME" Type="nchar" MaxLength="10" Nullable="false" />
           <Property Name="PLEDGE_CLASS_SEM" Type="nchar" MaxLength="10" />
           <Property Name="PLEDGE_CLASS_YEAR" Type="date" />
@@ -181,8 +181,7 @@ FROM [dbo].[FACT] AS [FACT]</DefiningQuery>
             <End Role="POINTS" EntitySet="POINTS" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="SAEDB" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">

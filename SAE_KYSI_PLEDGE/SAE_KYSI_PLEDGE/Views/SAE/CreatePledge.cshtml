@@ -46,6 +46,9 @@
 
             @Html.LabelFor(m => m.BigBro_Last, "Big Brother Last Name")
             @Html.TextBoxFor(m => m.BigBro_Last)
+            
+             @Html.LabelFor(m => m.Pledge_Class_Name, "Select Pledge Class")
+    @Html.Action("ClassDropDownList", "SAE", new { selected = "1", type = "Pledge Class" })
 
 
             <div>

@@ -14,7 +14,7 @@ warning 6002: The table/view 'SAE_PLEDGE_POINTS.dbo.FACT' does not have a primar
     <Key>
       <PropertyRef Name="PLEDGE_ID" />
     </Key>
-    <Property Name="PLEDGE_ID" Type="int" Nullable="false" />
+    <Property Name="PLEDGE_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="FIRST_NAME" Type="text" />
     <Property Name="LAST_NAME" Type="text" />
     <Property Name="STREET_ADDR" Type="nchar" MaxLength="200" />
@@ -31,7 +31,7 @@ warning 6002: The table/view 'SAE_PLEDGE_POINTS.dbo.FACT' does not have a primar
     <Key>
       <PropertyRef Name="PLEDGE_CLASS_ID" />
     </Key>
-    <Property Name="PLEDGE_CLASS_ID" Type="int" Nullable="false" />
+    <Property Name="PLEDGE_CLASS_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="PLEDGE_CLASS_NAME" Type="nchar" MaxLength="10" Nullable="false" />
     <Property Name="PLEDGE_CLASS_SEM" Type="nchar" MaxLength="10" />
     <Property Name="PLEDGE_CLASS_YEAR" Type="date" />

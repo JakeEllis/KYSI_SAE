@@ -151,8 +151,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SAEDB.edmx</DependentUpon>
     </Compile>
-    <Compile Include="sp_helpdiagramdefinition_Result.cs" />
-    <Compile Include="sp_helpdiagrams_Result.cs" />
+    <Compile Include="sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>SAEDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagrams_Result.cs">
+      <DependentUpon>SAEDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="sysdiagram.cs">
       <DependentUpon>SAEDB.tt</DependentUpon>
     </Compile>
