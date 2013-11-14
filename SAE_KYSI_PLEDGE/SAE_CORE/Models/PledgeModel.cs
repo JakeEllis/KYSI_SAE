@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace SAE_CORE
 {
-    public class PledgeModel
+    public class PledgeModel : Controller
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
