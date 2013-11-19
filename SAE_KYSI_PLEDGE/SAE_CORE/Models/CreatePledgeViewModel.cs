@@ -7,11 +7,11 @@ using System.Web;
 using System.Web.Mvc;
 
 
-namespace SAE_KYSI_PLEDGE.ViewModels
+namespace SAE_CORE.Models
 {
     public class CreatePledgeViewModel : Controller
     {    
-        public SelectList Pledge_Class_Name { get; set; }
+        public int Pledge_Class_Name { get; set; }
 
         public string FirstName { get; set; }
         public string LastName { get; set; }
@@ -25,11 +25,6 @@ namespace SAE_KYSI_PLEDGE.ViewModels
         public string BigBro_First { get; set; }
         public string BigBro_Last { get; set; }
         public int Pledge_Class_ID { get; set; }
-
-        public CreatePledgeViewModel()
-        {
-            
-        }
 
      
     }

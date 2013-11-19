@@ -1,8 +1,9 @@
 ﻿@{
     ViewBag.Title = "Add A Pledge";
 
-    @model SAE_CORE.PledgeModel
+    @model SAE_CORE.Models.CreatePledgeViewModel 
 }
+
 
 @section featured
     {
@@ -13,8 +14,6 @@
 
         @using (Html.BeginForm())
         {
-
-
             @*style="display:none;" class="answer_list"*@
 
             @Html.LabelFor(m => m.FirstName, "First Name")
@@ -47,8 +46,8 @@
             @Html.LabelFor(m => m.BigBro_Last, "Big Brother Last Name")
             @Html.TextBoxFor(m => m.BigBro_Last)
             
-             @Html.LabelFor(m => m.Pledge_Class_Name, "Select Pledge Class")
-    @Html.Action("ClassDropDownList", "SAE", new { selected = "1", type = "Pledge Class" })
+            @Html.LabelFor(m => m.Pledge_Class_Name, "Select Pledge Class")
+            @Html.Action("ClassDropDownList", "SAE", new { selected = "", type = "Pledge Class" })
 
 
             <div>

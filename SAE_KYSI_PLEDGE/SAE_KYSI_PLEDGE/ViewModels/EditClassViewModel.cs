@@ -15,6 +15,7 @@ namespace SAE_KYSI_PLEDGE.ViewModels
     {
         public string Text { get; set; }
         public string Value { get; set; }
+        public int SelectedIndex { get; set; }
 
     }
 
@@ -39,8 +40,9 @@ namespace SAE_KYSI_PLEDGE.ViewModels
 
         public EditClassViewModel(List<DropdownListItem> items, string selected)
         {
+
             Classes = items;
-            SelectedItemID = selected;
+            SelectedItemID = Classes.ToList().FindIndex(selected);
 
         }
 

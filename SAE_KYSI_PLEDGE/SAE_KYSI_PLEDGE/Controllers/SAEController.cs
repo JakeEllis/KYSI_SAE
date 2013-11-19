@@ -79,12 +79,16 @@ namespace SAE_KYSI_PLEDGE.Controllers
             return View();
         }
 
+
         [HttpPost] //Saving the pledge information to the database
-        public ActionResult CreatePledge(PledgeModel m)
+        public ActionResult CreatePledge(CreatePledgeViewModel m)
         {
+
             if (ModelState.IsValid)
             {
                 SAE_DB _context = new SAE_DB();
+
+                var CreatePledgeVM = new CreatePledgeViewModel();
 
                 var pledge = new PLEDGE
                 {
@@ -99,10 +103,12 @@ namespace SAE_KYSI_PLEDGE.Controllers
                     BIG_BROTHER_LAST = m.BigBro_Last,
                     GRAD_YEAR = m.GradYear,
                     PLEDGE_ID = m.PledgeID,
-                    PLEDGE_CLASS_ID = m.Pledge_Class_ID
+
+                    PLEDGE_CLASS_ID = m.Pledge_Class_Name
                 };
 
                 _context.PLEDGEs.Add(pledge);
+              
                 _context.SaveChanges();
 
                 return RedirectToAction("CreatePledge");
@@ -119,10 +125,27 @@ namespace SAE_KYSI_PLEDGE.Controllers
 
 
         //AddPledgeToClass is to populate the readonly portion above the 
+
         [ChildActionOnly]                 // pledge information to display the class information they are being added to
         public ActionResult AddPledgeToClass(string type, string selected)
         {
             SAE_DB _context = new SAE_DB();
+
+            var pledge = new PLEDGE_CLASS
+            {
+                //FIRST_NAME = m.FirstName,
+                //LAST_NAME = m.LastName,
+                //PHONE = m.PhoneNumber,
+                //STREET_ADDR = m.Street_Address,
+                //CITY = m.City,
+                //EMAIL = m.Email,
+                //ZIP = m.ZipCode,
+                //BIG_BROTHER_FIRST = m.BigBro_First,
+                //BIG_BROTHER_LAST = m.BigBro_Last,
+                //GRAD_YEAR = m.GradYear,
+                //PLEDGE_ID = m.PledgeID,
+                //PLEDGE_CLASS_ID = m.Pledge_Class_ID
+            };
 
 
             //var ddlList = (from context in _context.PLEDGE_CLASS
@@ -145,34 +168,7 @@ namespace SAE_KYSI_PLEDGE.Controllers
         {
             return View();
         }
-
-        #endregion
-
-        #region Edit Class
-        public ActionResult EditClass()
-        {
-
-            return View();
-        }
-
-
-        [ChildActionOnly]
-        public ActionResult ClassDropDownList(string type, string selected)
-        {
-            SAE_DB _context = new SAE_DB();
-
-            var ddlList = (from context in _context.PLEDGE_CLASS
-
-                           select new DropdownListItem { Text = context.PLEDGE_CLASS_NAME, Value = context.PLEDGE_CLASS_NAME }).ToList();
-
-            var editClassVM = new EditClassViewModel(ddlList, selected);
-
-            return PartialView("EditClassPartialView", editClassVM);
-
-        }
-        #endregion
-
-        #region Edit Pledge
+        
         [ChildActionOnly]
         public ActionResult PledgeFirstDropDownList(string type, string selected)
         {
@@ -205,14 +201,48 @@ namespace SAE_KYSI_PLEDGE.Controllers
 
         #endregion
 
+        #region Edit Class
+        public ActionResult EditClass()
+        {
+
+            return View();
+        }
+
+
+        [ChildActionOnly]
+        public ActionResult ClassDropDownList(string type, string selected)
+        {
+            SAE_DB _context = new SAE_DB();
+
+            var ddlList = (from context in _context.PLEDGE_CLASS
+
+                           select new DropdownListItem { Text = context.PLEDGE_CLASS_NAME, Value = context.PLEDGE_CLASS_NAME }).ToList();
+
+            var editClassVM = new EditClassViewModel(ddlList, selected);
+
+            return PartialView("EditClassPartialView", editClassVM);
+
+        }
+        #endregion
+
         #region points
 
         public ActionResult ManagePoints()
         {
-            ViewBag.Message = "Manage Points";
+          
+            return View();
+        }
+
+
+        public ActionResult ManagePoints(PointsModel m)
+        {
+            SAE_DB _Context = new SAE_DB();
+
+            //var data = from PLEDGE select *;
 
             return View();
         }
+
 
         #endregion
 

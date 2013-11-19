@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace SAE_CORE
+namespace SAE_CORE.Models
 {
     public class PledgeModel : Controller
     {
