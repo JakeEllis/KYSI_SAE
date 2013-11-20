@@ -218,3 +218,34 @@ C:\Users\Jake Ellis\Desktop\SAE\KYSI_SAE\SAE_KYSI_PLEDGE\SAE_CORE\bin\EntityFram
 C:\Users\Jake Ellis\Desktop\SAE\KYSI_SAE\SAE_KYSI_PLEDGE\SAE_CORE\obj\Debug\SAE_CORE.csprojResolveAssemblyReference.cache
 C:\Users\Jake Ellis\Desktop\SAE\KYSI_SAE\SAE_KYSI_PLEDGE\SAE_CORE\obj\Debug\SAE_CORE.dll
 C:\Users\Jake Ellis\Desktop\SAE\KYSI_SAE\SAE_KYSI_PLEDGE\SAE_CORE\obj\Debug\SAE_CORE.pdb
+C:\Users\Brad\Documents\GitHub\KYSI_SAE\SAE_KYSI_PLEDGE\SAE_CORE\bin\SAE_CORE.dll
+C:\Users\Brad\Documents\GitHub\KYSI_SAE\SAE_KYSI_PLEDGE\SAE_CORE\bin\SAE_CORE.pdb
+C:\Users\Brad\Documents\GitHub\KYSI_SAE\SAE_KYSI_PLEDGE\SAE_CORE\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Brad\Documents\GitHub\KYSI_SAE\SAE_KYSI_PLEDGE\SAE_CORE\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+C:\Users\Brad\Documents\GitHub\KYSI_SAE\SAE_KYSI_PLEDGE\SAE_CORE\bin\Newtonsoft.Json.dll
+C:\Users\Brad\Documents\GitHub\KYSI_SAE\SAE_KYSI_PLEDGE\SAE_CORE\bin\SAE_DAL.dll
+C:\Users\Brad\Documents\GitHub\KYSI_SAE\SAE_KYSI_PLEDGE\SAE_CORE\bin\System.Net.Http.Formatting.dll
+C:\Users\Brad\Documents\GitHub\KYSI_SAE\SAE_KYSI_PLEDGE\SAE_CORE\bin\System.Web.Helpers.dll
+C:\Users\Brad\Documents\GitHub\KYSI_SAE\SAE_KYSI_PLEDGE\SAE_CORE\bin\System.Web.Http.dll
+C:\Users\Brad\Documents\GitHub\KYSI_SAE\SAE_KYSI_PLEDGE\SAE_CORE\bin\System.Web.Http.WebHost.dll
+C:\Users\Brad\Documents\GitHub\KYSI_SAE\SAE_KYSI_PLEDGE\SAE_CORE\bin\System.Web.Mvc.dll
+C:\Users\Brad\Documents\GitHub\KYSI_SAE\SAE_KYSI_PLEDGE\SAE_CORE\bin\System.Web.Razor.dll
+C:\Users\Brad\Documents\GitHub\KYSI_SAE\SAE_KYSI_PLEDGE\SAE_CORE\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Brad\Documents\GitHub\KYSI_SAE\SAE_KYSI_PLEDGE\SAE_CORE\bin\System.Web.WebPages.dll
+C:\Users\Brad\Documents\GitHub\KYSI_SAE\SAE_KYSI_PLEDGE\SAE_CORE\bin\System.Web.WebPages.Razor.dll
+C:\Users\Brad\Documents\GitHub\KYSI_SAE\SAE_KYSI_PLEDGE\SAE_CORE\bin\EntityFramework.dll
+C:\Users\Brad\Documents\GitHub\KYSI_SAE\SAE_KYSI_PLEDGE\SAE_CORE\bin\SAE_DAL.pdb
+C:\Users\Brad\Documents\GitHub\KYSI_SAE\SAE_KYSI_PLEDGE\SAE_CORE\bin\Newtonsoft.Json.xml
+C:\Users\Brad\Documents\GitHub\KYSI_SAE\SAE_KYSI_PLEDGE\SAE_CORE\bin\System.Net.Http.Formatting.xml
+C:\Users\Brad\Documents\GitHub\KYSI_SAE\SAE_KYSI_PLEDGE\SAE_CORE\bin\System.Web.Helpers.xml
+C:\Users\Brad\Documents\GitHub\KYSI_SAE\SAE_KYSI_PLEDGE\SAE_CORE\bin\System.Web.Http.xml
+C:\Users\Brad\Documents\GitHub\KYSI_SAE\SAE_KYSI_PLEDGE\SAE_CORE\bin\System.Web.Http.WebHost.xml
+C:\Users\Brad\Documents\GitHub\KYSI_SAE\SAE_KYSI_PLEDGE\SAE_CORE\bin\System.Web.Mvc.xml
+C:\Users\Brad\Documents\GitHub\KYSI_SAE\SAE_KYSI_PLEDGE\SAE_CORE\bin\System.Web.Razor.xml
+C:\Users\Brad\Documents\GitHub\KYSI_SAE\SAE_KYSI_PLEDGE\SAE_CORE\bin\System.Web.WebPages.xml
+C:\Users\Brad\Documents\GitHub\KYSI_SAE\SAE_KYSI_PLEDGE\SAE_CORE\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Brad\Documents\GitHub\KYSI_SAE\SAE_KYSI_PLEDGE\SAE_CORE\bin\System.Web.WebPages.Razor.xml
+C:\Users\Brad\Documents\GitHub\KYSI_SAE\SAE_KYSI_PLEDGE\SAE_CORE\bin\EntityFramework.xml
+C:\Users\Brad\Documents\GitHub\KYSI_SAE\SAE_KYSI_PLEDGE\SAE_CORE\obj\Debug\SAE_CORE.csprojResolveAssemblyReference.cache
+C:\Users\Brad\Documents\GitHub\KYSI_SAE\SAE_KYSI_PLEDGE\SAE_CORE\obj\Debug\SAE_CORE.dll
+C:\Users\Brad\Documents\GitHub\KYSI_SAE\SAE_KYSI_PLEDGE\SAE_CORE\obj\Debug\SAE_CORE.pdb

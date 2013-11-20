@@ -176,9 +176,13 @@ namespace SAE_KYSI_PLEDGE.Controllers
 
             var ddlList = (from context in _context.PLEDGEs
 
-                           select new DropdownListItem { Text = context.FIRST_NAME, Value = context.LAST_NAME }).ToList();
+                           select new DropDownListItem<string>  { Text = context.FIRST_NAME, Value = context.LAST_NAME }).ToList();
 
-            var editPledgeVM = new EditPledgeViewModel(ddlList, selected);
+            var editPledgeVM = new EditPledgeViewModel()
+                {
+                    SelectedItemID = selected,
+                    Pledges = ddlList
+                };
 
             return PartialView("EditPledgePartialView", editPledgeVM);
 
@@ -191,9 +195,13 @@ namespace SAE_KYSI_PLEDGE.Controllers
 
             var ddlList = (from context in _context.PLEDGEs
 
-                           select new DropdownListItem { Text = context.LAST_NAME, Value = context.LAST_NAME }).ToList();
+                           select new DropDownListItem<string> { Text = context.LAST_NAME, Value = context.LAST_NAME }).ToList();
 
-            var editPledgeVM = new EditPledgeViewModel(ddlList, selected);
+            var editPledgeVM = new EditPledgeViewModel()
+                {
+                    SelectedItemID = selected,
+                    Pledges = ddlList
+                };
 
             return PartialView("EditPledgePartialView", editPledgeVM);
 
@@ -210,15 +218,19 @@ namespace SAE_KYSI_PLEDGE.Controllers
 
 
         [ChildActionOnly]
-        public ActionResult ClassDropDownList(string type, string selected)
+        public ActionResult ClassDropDownList(string type, int selected)
         {
             SAE_DB _context = new SAE_DB();
 
             var ddlList = (from context in _context.PLEDGE_CLASS
 
-                           select new DropdownListItem { Text = context.PLEDGE_CLASS_NAME, Value = context.PLEDGE_CLASS_NAME }).ToList();
+                           select new DropDownListItem<int> { Text = context.PLEDGE_CLASS_NAME, Value = context.PLEDGE_CLASS_ID }).ToList();
 
-            var editClassVM = new EditClassViewModel(ddlList, selected);
+            var editClassVM = new EditClassViewModel()
+                {
+                    SelectedItemID = selected,
+                    Classes = ddlList  
+                };
 
             return PartialView("EditClassPartialView", editClassVM);
 

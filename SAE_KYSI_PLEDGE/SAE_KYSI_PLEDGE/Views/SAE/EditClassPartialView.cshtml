@@ -6,6 +6,6 @@
 
     @model SAE_KYSI_PLEDGE.ViewModels.EditClassViewModel
 
-    @Html.DropDownListFor(m => m.SelectedItemID, Model.ClassList)
+    @Html.DropDownListFor(m => m.SelectedItemID,new SelectList(Model.Classes, "Value", "Text", Model.SelectedItemID))
 
 </div>
