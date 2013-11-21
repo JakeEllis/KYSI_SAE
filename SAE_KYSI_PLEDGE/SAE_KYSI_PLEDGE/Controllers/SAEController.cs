@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using SAE_KYSI_PLEDGE.ViewModels;
 using SAE_DAL;
 using SAE_CORE;
 using SAE_CORE.Models;
@@ -15,12 +14,8 @@ namespace SAE_KYSI_PLEDGE.Controllers
 
         public ActionResult Index()
         {
-
             return View();
         }
-
-
-
 
         #region Create Class
 
@@ -68,27 +63,27 @@ namespace SAE_KYSI_PLEDGE.Controllers
         }
         #endregion
 
-
-
         #region Create Pledge
 
         [HttpGet] //The constructor for the create pledge view
         public ActionResult CreatePledge()
         {
-
-            return View();
+            PledgeViewModel cpvm = new PledgeViewModel();
+            cpvm.ClassDropDownList.Classes = ClassDropDownList();
+            cpvm.Pledge_Class_ID = 11;
+            return View(cpvm);
         }
 
 
         [HttpPost] //Saving the pledge information to the database
-        public ActionResult CreatePledge(CreatePledgeViewModel m)
+        public ActionResult CreatePledge(PledgeViewModel m)
         {
 
             if (ModelState.IsValid)
             {
                 SAE_DB _context = new SAE_DB();
 
-                var CreatePledgeVM = new CreatePledgeViewModel();
+                var CreatePledgeVM = new PledgeViewModel();
 
                 var pledge = new PLEDGE
                 {
@@ -103,8 +98,7 @@ namespace SAE_KYSI_PLEDGE.Controllers
                     BIG_BROTHER_LAST = m.BigBro_Last,
                     GRAD_YEAR = m.GradYear,
                     PLEDGE_ID = m.PledgeID,
-
-                    PLEDGE_CLASS_ID = m.Pledge_Class_Name
+                    PLEDGE_CLASS_ID = m.Pledge_Class_ID
                 };
 
                 _context.PLEDGEs.Add(pledge);
@@ -116,16 +110,7 @@ namespace SAE_KYSI_PLEDGE.Controllers
             return View("CreatePledge");
         }
 
-        //public JsonResult PledgeList()
-        //{
-        //   // SAE_DB _context = new SAE_DB();
-
-        //    return null;//Json(Data, JsonRequestBehavior.AllowGet);
-        //}
-
-
         //AddPledgeToClass is to populate the readonly portion above the 
-
         [ChildActionOnly]                 // pledge information to display the class information they are being added to
         public ActionResult AddPledgeToClass(string type, string selected)
         {
@@ -162,13 +147,12 @@ namespace SAE_KYSI_PLEDGE.Controllers
         #endregion
 
 
-
         #region edit pledge
         public ActionResult EditPledge()
         {
             return View();
         }
-        
+
         [ChildActionOnly]
         public ActionResult PledgeFirstDropDownList(string type, string selected)
         {
@@ -176,9 +160,9 @@ namespace SAE_KYSI_PLEDGE.Controllers
 
             var ddlList = (from context in _context.PLEDGEs
 
-                           select new DropDownListItem<string>  { Text = context.FIRST_NAME, Value = context.LAST_NAME }).ToList();
+                           select new DropDownListItem<string> { Text = context.FIRST_NAME, Value = context.FIRST_NAME }).ToList();
 
-            var editPledgeVM = new EditPledgeViewModel()
+            var editPledgeVM = new PledgeViewModel()
                 {
                     SelectedItemID = selected,
                     Pledges = ddlList
@@ -197,7 +181,7 @@ namespace SAE_KYSI_PLEDGE.Controllers
 
                            select new DropDownListItem<string> { Text = context.LAST_NAME, Value = context.LAST_NAME }).ToList();
 
-            var editPledgeVM = new EditPledgeViewModel()
+            var editPledgeVM = new PledgeViewModel()
                 {
                     SelectedItemID = selected,
                     Pledges = ddlList
@@ -218,21 +202,14 @@ namespace SAE_KYSI_PLEDGE.Controllers
 
 
         [ChildActionOnly]
-        public ActionResult ClassDropDownList(string type, int selected)
+        public List<DropDownListItem<int>> ClassDropDownList()
         {
             SAE_DB _context = new SAE_DB();
 
             var ddlList = (from context in _context.PLEDGE_CLASS
 
                            select new DropDownListItem<int> { Text = context.PLEDGE_CLASS_NAME, Value = context.PLEDGE_CLASS_ID }).ToList();
-
-            var editClassVM = new EditClassViewModel()
-                {
-                    SelectedItemID = selected,
-                    Classes = ddlList  
-                };
-
-            return PartialView("EditClassPartialView", editClassVM);
+            return ddlList;
 
         }
         #endregion
