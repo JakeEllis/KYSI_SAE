@@ -6,8 +6,6 @@ using System.Web.Mvc;
 using SAE_CORE;
 using SAE_DAL;
 
-
-
 namespace SAE_CORE.Models
 {
  
@@ -19,7 +17,7 @@ namespace SAE_CORE.Models
         }
 
         public List<DropDownListItem<int>> Classes { get; set; }
-        public int SelectedItemID { get; set; }
+        public int ClassSelectedItemID { get; set; }
 
     }
 }

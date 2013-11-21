@@ -20,5 +20,8 @@ namespace SAE_CORE.Models
         public string BigBro_First { get; set; }
         public string BigBro_Last { get; set; }
         public int Pledge_Class_ID { get; set; }
+
+        public List<DropDownListItem<string>> Pledges { get; set; }
+        public int PledgeNameSelectedItemID { get; set; }
     }
 }

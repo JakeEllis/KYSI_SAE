@@ -1,9 +1,7 @@
 ﻿@{
     ViewBag.Title = "EditPledge";
-    @model SAE_CORE.PledgeModel
+    @model SAE_CORE.Models.PledgeViewModel
 }
-
-  
 
     @section featured
 {
@@ -12,10 +10,10 @@
         <br />
 
     @Html.LabelFor(m => m.FirstName, "Select Pledge First Name")
-    @Html.Action("PledgeFirstDropDownList", "SAE", new { selected = "1", type = "Pledge First Name" })
+    @Html.DropDownListFor(m => m.FirstName, new SelectList(Model.FirstNameDropDownList.Pledges, "Value", "Text", Model.LastNameDropDownList.Pledges))
 
     @Html.LabelFor(m => m.LastName, "Select Pledge Last Name")
-    @Html.Action("PledgeLastDropDownList", "SAE", new { selected = "1", type = "Pledge Last Name" })
+    @Html.DropDownListFor(m => m.LastName, new SelectList(Model.LastNameDropDownList.Pledges, "Value", "Text", Model.LastNameDropDownList.Pledges))
 
     <input type="submit" title="Select" value="Select Class" onclick="showDiv()" />
     <input type="button" title="Cancel" value="Cancel" onclick="location.href= '@Url.Action("Index", "SAE")'" />

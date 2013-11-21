@@ -308,7 +308,6 @@
     <Content Include="Views\SAE\EditClass.cshtml" />
     <Content Include="Views\SAE\EditPledge.cshtml" />
     <Content Include="Views\SAE\ManagePoints.cshtml" />
-    <Content Include="Views\SAE\Index.cshtml" />
     <Content Include="Views\SAE\AddPledgeToPledgeClassPartialView.cshtml" />
     <Content Include="Views\SAE\CreatePledge.cshtml" />
   </ItemGroup>

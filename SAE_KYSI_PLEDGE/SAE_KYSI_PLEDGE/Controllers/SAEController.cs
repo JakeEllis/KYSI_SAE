@@ -70,7 +70,7 @@ namespace SAE_KYSI_PLEDGE.Controllers
         {
             PledgeViewModel cpvm = new PledgeViewModel();
             cpvm.ClassDropDownList.Classes = ClassDropDownList();
-            cpvm.Pledge_Class_ID = 11;
+           
             return View(cpvm);
         }
 
@@ -150,11 +150,15 @@ namespace SAE_KYSI_PLEDGE.Controllers
         #region edit pledge
         public ActionResult EditPledge()
         {
-            return View();
+            PledgeViewModel pvm = new PledgeViewModel();
+            pvm.FirstNameDropDownList.Pledges = PledgeFirstDropDownList();
+            pvm.LastNameDropDownList.Pledges = PledgeLastDropDownList();
+
+            return View(pvm);
         }
 
         [ChildActionOnly]
-        public ActionResult PledgeFirstDropDownList(string type, string selected)
+        public List<DropDownListItem<string>> PledgeFirstDropDownList()
         {
             SAE_DB _context = new SAE_DB();
 
@@ -162,33 +166,19 @@ namespace SAE_KYSI_PLEDGE.Controllers
 
                            select new DropDownListItem<string> { Text = context.FIRST_NAME, Value = context.FIRST_NAME }).ToList();
 
-            var editPledgeVM = new PledgeViewModel()
-                {
-                    SelectedItemID = selected,
-                    Pledges = ddlList
-                };
-
-            return PartialView("EditPledgePartialView", editPledgeVM);
+            return ddlList;
 
         }
 
         [ChildActionOnly]
-        public ActionResult PledgeLastDropDownList(string type, string selected)
+        public List<DropDownListItem<string>>PledgeLastDropDownList()
         {
             SAE_DB _context = new SAE_DB();
 
             var ddlList = (from context in _context.PLEDGEs
 
                            select new DropDownListItem<string> { Text = context.LAST_NAME, Value = context.LAST_NAME }).ToList();
-
-            var editPledgeVM = new PledgeViewModel()
-                {
-                    SelectedItemID = selected,
-                    Pledges = ddlList
-                };
-
-            return PartialView("EditPledgePartialView", editPledgeVM);
-
+            return ddlList;
         }
 
         #endregion

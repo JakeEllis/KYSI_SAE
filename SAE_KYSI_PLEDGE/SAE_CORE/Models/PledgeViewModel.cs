@@ -6,8 +6,6 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-
-
 namespace SAE_CORE.Models
 {
     public class PledgeViewModel : Controller
@@ -15,12 +13,19 @@ namespace SAE_CORE.Models
         public PledgeViewModel()
         {
             ClassDropDownList = new ClassViewModel();
-            Pledges = new List<DropDownListItem<string>>();
+            FirstNameDropDownList = new PledgeModel();
+            LastNameDropDownList = new PledgeModel();
         }
-        public List<DropDownListItem<string>> Pledges { get; set; }
-        public string SelectedItemID { get; set; }
 
-        public ClassViewModel ClassDropDownList { get; set; } 
+        //Populates the pledge class first and last name dropdowns
+        public PledgeModel FirstNameDropDownList { get; set; }
+        public PledgeModel LastNameDropDownList { get; set; }
+      
+
+
+        public ClassViewModel ClassDropDownList { get; set; }
+
+ 
 
         public string Pledge_Class_Name { get; set; }
         public string FirstName { get; set; }

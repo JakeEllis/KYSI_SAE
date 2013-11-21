@@ -10,8 +10,6 @@
     <div class="text_sae">
         <h2>Add Pledges to Pledge Class </h2>
 
-        @*@Html.Partial("~/Views/SAE/AddPledgeToPledgeClassPartialView.cshtml",SAE_CORE.Models.PledgeClassModel)*@
-
         @using (Html.BeginForm())
         {
             @*style="display:none;" class="answer_list"*@
@@ -46,12 +44,9 @@
             @Html.LabelFor(m => m.BigBro_Last, "Big Brother Last Name")
             @Html.TextBoxFor(m => m.BigBro_Last)
             
-            @Html.DropDownListFor(m => m.Pledge_Class_ID, new SelectList(Model.ClassDropDownList.Classes, "Value","Text", Model.ClassDropDownList.SelectedItemID ))
-                        
             @Html.LabelFor(m => m.Pledge_Class_Name, "Select Pledge Class")
-            @*@Html.Action("ClassDropDownList", "SAE", new { selected = "6", type = "Pledge Class" })*@
-
-
+            @Html.DropDownListFor(m => m.Pledge_Class_ID, new SelectList(Model.ClassDropDownList.Classes, "Value","Text", Model.ClassDropDownList.ClassSelectedItemID ))
+                       
             <div>
                 <input type="submit" title="CreatePledge" value="Save" />
                 <input type="button" title="Cancel" value="Cancel" onclick="location.href= '@Url.Action("Index", "SAE")'" />
